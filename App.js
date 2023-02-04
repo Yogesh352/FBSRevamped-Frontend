@@ -9,6 +9,8 @@ import FavouritesPage from "./src/pages/Favourites";
 import ProfilePage from "./src/pages/Profile";
 import { TouchableOpacity, View, StyleSheet } from "react-native";
 import HomeStack from "./src/navigation/HomeStack";
+import { LinearGradient } from "expo-linear-gradient";
+import { Header } from "react-native/Libraries/NewAppScreen";
 
 const Tab = createBottomTabNavigator();
 
@@ -57,13 +59,14 @@ const App = () => {
                 color: "white",
                 fontSize: 25,
               },
+              headerBackground: () => (
+                <LinearGradient
+                  colors={["#879fe9", "#2349c2"]}
+                  style={[StyleSheet.absoluteFill, styles.linearGradient]}
+                />
+              ),
               headerStyle: {
                 height: 150,
-                borderBottomRightRadius: 20,
-                borderBottomLeftRadius: 20,
-                backgroundColor: "#2349c2",
-                shadowColor: "#000",
-                elevation: 25,
               },
             }}
           />
@@ -77,13 +80,14 @@ const App = () => {
                 color: "white",
                 fontSize: 25,
               },
+              headerBackground: () => (
+                <LinearGradient
+                  colors={["#879fe9", "#2349c2"]}
+                  style={[StyleSheet.absoluteFill, styles.linearGradient]}
+                />
+              ),
               headerStyle: {
                 height: 150,
-                borderBottomRightRadius: 20,
-                borderBottomLeftRadius: 20,
-                backgroundColor: "#2349c2",
-                shadowColor: "#000",
-                elevation: 25,
               },
             }}
           />
@@ -97,13 +101,14 @@ const App = () => {
                 color: "white",
                 fontSize: 25,
               },
+              headerBackground: () => (
+                <LinearGradient
+                  colors={["#879fe9", "#2349c2"]}
+                  style={[StyleSheet.absoluteFill, styles.linearGradient]}
+                />
+              ),
               headerStyle: {
                 height: 150,
-                borderBottomRightRadius: 20,
-                borderBottomLeftRadius: 20,
-                backgroundColor: "#2349c2",
-                shadowColor: "#000",
-                elevation: 25,
               },
               tabBarButton: (props) => (
                 <TouchableOpacity
@@ -148,14 +153,14 @@ const App = () => {
                 color: "white",
                 fontSize: 25,
               },
+              headerBackground: () => (
+                <LinearGradient
+                  colors={["#879fe9", "#2349c2"]}
+                  style={[StyleSheet.absoluteFill, styles.linearGradient]}
+                />
+              ),
               headerStyle: {
                 height: 150,
-                borderBottomRightRadius: 20,
-                borderBottomLeftRadius: 20,
-                backgroundColor: "#2349c2",
-                shadowColor: "#000",
-                elevation: 25,
-                // fontSize: "bold",
               },
             }}
             name="Favourites"
@@ -169,14 +174,14 @@ const App = () => {
                 color: "white",
                 fontSize: 25,
               },
+              headerBackground: () => (
+                <LinearGradient
+                  colors={["#879fe9", "#2349c2"]}
+                  style={[StyleSheet.absoluteFill, styles.linearGradient]}
+                />
+              ),
               headerStyle: {
                 height: 150,
-                borderBottomRightRadius: 20,
-                borderBottomLeftRadius: 20,
-                backgroundColor: "#2349c2",
-                shadowColor: "#000",
-                elevation: 25,
-                // fontSize: "bold",
               },
             }}
             name="Profile"
@@ -191,5 +196,14 @@ const App = () => {
 export default App;
 
 const styles = StyleSheet.create({
-  backgroundColor: "#F4F6FB",
+  main: {
+    backgroundColor: "#F4F6FB",
+  },
+  linearGradient: {
+    height: 150,
+    borderBottomLeftRadius: 20,
+    borderBottomRightRadius: 20,
+    shadowColor: "#000",
+    elevation: 25,
+  },
 });
