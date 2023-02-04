@@ -1,27 +1,53 @@
-import { Button, Text,  View, StyleSheet } from "react-native";
+import {Text, View, StyleSheet, TouchableOpacity } from "react-native";
 
 const HomePage = ({ navigation }) => {
   return (
-    <View style={{ padding: 10, flex: 1, justifyContent: "space-evenly" }}>
-      <View></View>
-      <Button
-        title="Go to Filter Page"
+    <View style={{ padding: 10, flex: 1, backgroundColor: "#F4F6FB" }}>
+      <TouchableOpacity
         onPress={() => navigation.navigate("Filter")}
-      />
-      <Button
-        title="Go to Listings Page"
+        style={styles.buttonContainer}
+      >
+        <Text style={styles.buttonText}>Filter</Text>
+      </TouchableOpacity>
+      <TouchableOpacity
         onPress={() => navigation.navigate("Listings")}
-      />
-      <Button
-        title="Go to Booking Page"
+        style={styles.buttonContainer}
+      >
+        <Text style={styles.buttonText}>Listings</Text>
+      </TouchableOpacity>
+      <TouchableOpacity
         onPress={() => navigation.navigate("Bookings")}
-      />
-      <Button
-        title="Go to Map Page"
+        style={styles.buttonContainer}
+      >
+        <Text style={styles.buttonText}>Bookings</Text>
+      </TouchableOpacity>
+
+      <TouchableOpacity
         onPress={() => navigation.navigate("Map")}
-      />
+        style={styles.buttonContainer}
+      >
+        <Text style={styles.buttonText}>Maps</Text>
+      </TouchableOpacity>
     </View>
   );
 };
 
 export default HomePage;
+
+const styles = StyleSheet.create({
+  buttonContainer: {
+    elevation: 8,
+    backgroundColor: "#2349c2",
+    borderRadius: 10,
+    marginBottom: 20,
+    paddingVertical: 10,
+    paddingHorizontal: 12,
+  },
+  buttonText: {
+    fontSize: 18,
+    color: "#fff",
+    fontWeight: "bold",
+    alignSelf: "center",
+    textTransform: "uppercase",
+  },
+});
