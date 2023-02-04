@@ -1,5 +1,6 @@
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import React from "react";
+import ActualHome from "../pages/ActualHome";
 
 import BookingPage from "../pages/Booking";
 import FilterPage from "../pages/Filter";
@@ -12,7 +13,7 @@ const HomeStack = () => {
   return (
     <Stack.Navigator>
       <Stack.Screen
-        name="Home"
+        name="Default"
         component={HomePage}
         options={{ headerShown: false }}
       />
@@ -34,6 +35,11 @@ const HomeStack = () => {
       <Stack.Screen
         name="Filter"
         component={FilterPage}
+        options={{ headerShown: false }}
+      />
+      <Stack.Screen
+        name="LandingPage"
+        component={ActualHome}
         options={{ headerShown: false }}
       />
     </Stack.Navigator>
