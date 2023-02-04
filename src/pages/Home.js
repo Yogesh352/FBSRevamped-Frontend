@@ -1,4 +1,4 @@
-import {Text, View, StyleSheet, TouchableOpacity } from "react-native";
+import { Text, View, StyleSheet, TouchableOpacity } from "react-native";
 
 const HomePage = ({ navigation }) => {
   return (
@@ -27,6 +27,12 @@ const HomePage = ({ navigation }) => {
         style={styles.buttonContainer}
       >
         <Text style={styles.buttonText}>Maps</Text>
+      </TouchableOpacity>
+      <TouchableOpacity
+        onPress={() => navigation.navigate("ActualHome")}
+        style={styles.buttonContainer}
+      >
+        <Text style={styles.buttonText}>Actual Home</Text>
       </TouchableOpacity>
     </View>
   );
