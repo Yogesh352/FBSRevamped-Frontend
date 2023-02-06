@@ -90,12 +90,9 @@ const App = () => {
               headerBackground: () => (
                 <LinearGradient
                   colors={["#879fe9", "#2349c2"]}
-                  style={[StyleSheet.absoluteFill, styles.linearGradient]}
+                  style={[StyleSheet.absoluteFill]}
                 />
               ),
-              headerStyle: {
-                height: 150,
-              },
             }}
           />
           <Tab.Screen
@@ -111,12 +108,10 @@ const App = () => {
               headerBackground: () => (
                 <LinearGradient
                   colors={["#879fe9", "#2349c2"]}
-                  style={[StyleSheet.absoluteFill, styles.linearGradient]}
+                  style={[StyleSheet.absoluteFill]}
                 />
               ),
-              headerStyle: {
-                height: 150,
-              },
+              
               tabBarButton: (props) => (
                 <TouchableOpacity
                   style={{
@@ -163,12 +158,10 @@ const App = () => {
               headerBackground: () => (
                 <LinearGradient
                   colors={["#879fe9", "#2349c2"]}
-                  style={[StyleSheet.absoluteFill, styles.linearGradient]}
+                  style={[StyleSheet.absoluteFill]}
                 />
               ),
-              headerStyle: {
-                height: 150,
-              },
+              
             }}
             name="Favourites"
             component={FavouritesPage}
@@ -184,12 +177,9 @@ const App = () => {
               headerBackground: () => (
                 <LinearGradient
                   colors={["#879fe9", "#2349c2"]}
-                  style={[StyleSheet.absoluteFill, styles.linearGradient]}
+                  style={[StyleSheet.absoluteFill]}
                 />
               ),
-              headerStyle: {
-                height: 150,
-              },
             }}
             name="Profile"
             component={ProfilePage}
