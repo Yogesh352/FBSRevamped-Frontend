@@ -8,5 +8,4 @@ const ListingsPage = ({ navigation }) => {
   );
 };
 
-
 export default ListingsPage;
