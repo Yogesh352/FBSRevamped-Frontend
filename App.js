@@ -52,23 +52,7 @@ const App = () => {
           <Tab.Screen
             name="Home"
             component={HomeStack}
-            options={{
-              headerTitle: "FBS",
-              headerTitleStyle: {
-                fontWeight: "bold",
-                color: "white",
-                fontSize: 25,
-              },
-              headerBackground: () => (
-                <LinearGradient
-                  colors={["#879fe9", "#2349c2"]}
-                  style={[StyleSheet.absoluteFill, styles.linearGradient]}
-                />
-              ),
-              headerStyle: {
-                height: 150,
-              },
-            }}
+            options={{ headerShown: false }}
           />
           <Tab.Screen
             name="Booking"
@@ -83,12 +67,9 @@ const App = () => {
               headerBackground: () => (
                 <LinearGradient
                   colors={["#879fe9", "#2349c2"]}
-                  style={[StyleSheet.absoluteFill, styles.linearGradient]}
+                  style={[StyleSheet.absoluteFill]}
                 />
               ),
-              headerStyle: {
-                height: 150,
-              },
             }}
           />
           <Tab.Screen
@@ -104,12 +85,10 @@ const App = () => {
               headerBackground: () => (
                 <LinearGradient
                   colors={["#879fe9", "#2349c2"]}
-                  style={[StyleSheet.absoluteFill, styles.linearGradient]}
+                  style={[StyleSheet.absoluteFill]}
                 />
               ),
-              headerStyle: {
-                height: 150,
-              },
+              
               tabBarButton: (props) => (
                 <TouchableOpacity
                   style={{
@@ -156,12 +135,10 @@ const App = () => {
               headerBackground: () => (
                 <LinearGradient
                   colors={["#879fe9", "#2349c2"]}
-                  style={[StyleSheet.absoluteFill, styles.linearGradient]}
+                  style={[StyleSheet.absoluteFill]}
                 />
               ),
-              headerStyle: {
-                height: 150,
-              },
+              
             }}
             name="Favourites"
             component={FavouritesPage}
@@ -177,12 +154,9 @@ const App = () => {
               headerBackground: () => (
                 <LinearGradient
                   colors={["#879fe9", "#2349c2"]}
-                  style={[StyleSheet.absoluteFill, styles.linearGradient]}
+                  style={[StyleSheet.absoluteFill]}
                 />
               ),
-              headerStyle: {
-                height: 150,
-              },
             }}
             name="Profile"
             component={ProfilePage}
