@@ -34,6 +34,13 @@ const HomePage = ({ navigation }) => {
       >
         <Text style={styles.buttonText}>Actual Home</Text>
       </TouchableOpacity>
+
+      <TouchableOpacity
+        onPress={() => navigation.navigate("FacilityInfo")}
+        style={styles.buttonContainer}
+      >
+        <Text style={styles.buttonText}>Facility Information Page</Text>
+      </TouchableOpacity>
     </View>
   );
 };

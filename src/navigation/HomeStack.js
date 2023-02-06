@@ -4,6 +4,7 @@ import { LinearGradient } from "expo-linear-gradient";
 import ActualHome from "../pages/ActualHome";
 import { StyleSheet } from "react-native";
 import BookingPage from "../pages/Booking";
+import FacilityInformation from "../pages/FacilityInformation";
 import FilterPage from "../pages/Filter";
 import HomePage from "../pages/Home";
 import ListingsPage from "../pages/Listings";
@@ -13,6 +14,7 @@ const Stack = createNativeStackNavigator();
 const HomeStack = () => {
   return (
     <Stack.Navigator>
+
       <Stack.Group
         screenOptions={{
           headerTitle: "FBS",
@@ -59,6 +61,13 @@ const HomeStack = () => {
       >
         <Stack.Screen name="Map" component={MapPage} />
       </Stack.Group>
+
+      <Stack.Screen
+        name="FacilityInfo"
+        component={FacilityInformation}
+        options={{ headerShown: false }}
+      />
+
     </Stack.Navigator>
   );
 };
