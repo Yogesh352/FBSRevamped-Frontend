@@ -3,6 +3,7 @@ import React from "react";
 import ActualHome from "../pages/ActualHome";
 
 import BookingPage from "../pages/Booking";
+import FacilityInformation from "../pages/FacilityInformation";
 import FilterPage from "../pages/Filter";
 import HomePage from "../pages/Home";
 import ListingsPage from "../pages/Listings";
@@ -40,6 +41,11 @@ const HomeStack = () => {
       <Stack.Screen
         name="LandingPage"
         component={ActualHome}
+        options={{ headerShown: false }}
+      />
+      <Stack.Screen
+        name="FacilityInfo"
+        component={FacilityInformation}
         options={{ headerShown: false }}
       />
     </Stack.Navigator>
