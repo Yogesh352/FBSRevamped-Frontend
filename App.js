@@ -33,7 +33,7 @@ const App = () => {
               } else if (route.name === "Profile") {
                 iconName = focused ? "person-circle" : "person-circle-outline";
               }
-              return <Ionic name={iconName} size={25} colour={colour} />;
+              return <Ionic name={iconName} size={size} colour={colour} />;
             },
 
             tabBarActiveTintColor: "black",
@@ -53,21 +53,28 @@ const App = () => {
             name="Home"
             component={HomeStack}
             options={{
-              headerTitle: "FBS",
-              headerTitleStyle: {
-                fontWeight: "bold",
-                color: "white",
-                fontSize: 25,
-              },
-              headerBackground: () => (
-                <LinearGradient
-                  colors={["#879fe9", "#2349c2"]}
-                  style={[StyleSheet.absoluteFill, styles.linearGradient]}
-                />
-              ),
               headerStyle: {
-                height: 150,
+                backgroundColor: "#2349cf",
+                height: 50
               },
+              headerShadowVisible: false,
+              headerTitleAlign: 'center',
+              headerTitle: 'Home',
+              headerTitleStyle: {
+                color: "white"
+              }
+              // headerBackground: () => (
+              //   <LinearGradient
+              //     colors={["#879fe9", "#2349c2"]}
+              //     style={[StyleSheet.absoluteFill, styles.linearGradient]}
+              //   />
+              // ),
+              // headerTitle: "FBS",
+              // headerTitleStyle: {
+              //   fontWeight: "bold",
+              //   color: "yellow",
+              //   fontSize: 25,
+              // },
             }}
           />
           <Tab.Screen
@@ -200,10 +207,11 @@ const styles = StyleSheet.create({
     backgroundColor: "#F4F6FB",
   },
   linearGradient: {
-    height: 150,
+    height: 100,
     borderBottomLeftRadius: 20,
     borderBottomRightRadius: 20,
     shadowColor: "#000",
     elevation: 25,
   },
+
 });
