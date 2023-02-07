@@ -33,7 +33,7 @@ const App = () => {
               } else if (route.name === "Profile") {
                 iconName = focused ? "person-circle" : "person-circle-outline";
               }
-              return <Ionic name={iconName} size={25} colour={colour} />;
+              return <Ionic name={iconName} size={size} colour={colour} />;
             },
 
             tabBarActiveTintColor: "black",
@@ -41,7 +41,7 @@ const App = () => {
             tabBarShowLabel: false,
 
             tabBarStyle: {
-              height: 60,
+              height: 70,
               paddingBottom: 5,
               position: "absolute",
               borderTopLeftRadius: 10,
@@ -52,7 +52,30 @@ const App = () => {
           <Tab.Screen
             name="Home"
             component={HomeStack}
-            options={{ headerShown: false }}
+            options={{
+              headerStyle: {
+                backgroundColor: "#2349cf",
+                height: 50
+              },
+              headerShadowVisible: false,
+              headerTitleAlign: 'center',
+              headerTitle: 'Home',
+              headerTitleStyle: {
+                color: "white"
+              }
+              // headerBackground: () => (
+              //   <LinearGradient
+              //     colors={["#879fe9", "#2349c2"]}
+              //     style={[StyleSheet.absoluteFill, styles.linearGradient]}
+              //   />
+              // ),
+              // headerTitle: "FBS",
+              // headerTitleStyle: {
+              //   fontWeight: "bold",
+              //   color: "yellow",
+              //   fontSize: 25,
+              // },
+            }}
           />
           <Tab.Screen
             name="Booking"
@@ -174,10 +197,11 @@ const styles = StyleSheet.create({
     backgroundColor: "#F4F6FB",
   },
   linearGradient: {
-    height: 150,
+    height: 100,
     borderBottomLeftRadius: 20,
     borderBottomRightRadius: 20,
     shadowColor: "#000",
     elevation: 25,
   },
+
 });
