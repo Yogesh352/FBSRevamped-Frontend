@@ -28,9 +28,14 @@ const MockLayout = () => {
                   y={CoordinatesData.rectangle.y}
                   height={CoordinatesData.rectangle.height}
                   width={CoordinatesData.rectangle.width}
-                  stroke="black"
+                  stroke="grey"
                   strokeWidth="0.5"
-                  fill="#d3d3d3"
+                  fill={
+                    CoordinatesData.rectangle.color
+                      ? CoordinatesData.rectangle.color
+                      : "white"
+                  }
+                  rx="2"
                 />
               )}
               {CoordinatesData.text && (
@@ -39,9 +44,10 @@ const MockLayout = () => {
                   x={CoordinatesData.text.x}
                   y={CoordinatesData.text.y}
                   textAnchor="middle"
-                  fill="black"
-                  fontSize="5"
+                  fill="#5A5A5A"
+                  fontSize="4"
                   fontWeight="bold"
+                  fontFamily="Roboto"
                 >
                   {CoordinatesData.text.output}
                 </Text>

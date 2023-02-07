@@ -5,57 +5,59 @@ import MockLayout from "../components/Map/MockLayout/MockLayout";
 
 const MapPage = ({ navigation }) => {
   return (
-    <View style={{ flex: 1, height: "100%", backgroundColor: "#879fe9" }}>
-      <LinearGradient style={{ height: "70%" }} colors={["#2349c2", "#879fe9"]}>
-        <View style={{ height: "100%" }}>
+    <LinearGradient style={{ height: "100%" }} colors={["#2349cf", "#B79fe9"]}>
+      <View style={{ flex: 1, height: "100%" }}>
+        {/* <Text style={styles.titleText}>Section Availability</Text> */}
+        <View style={{ height: "70%" }}>
           <MockLayout />
         </View>
-      </LinearGradient>
-      <View style={styles.popup}>
-        <View
-          style={{
-            width: "100%",
-            flexDirection: "row",
-            justifyContent: "flex-start",
-          }}
-        >
-          <View style={{ width: "70%" }}>
-            <Text style={styles.popupTitle}>LKS Library Level 2</Text>
-            <View style={styles.iconAndText}>
-              <Ionicons
-                name="location-sharp"
-                size={18}
-                color={"grey"}
-                style={{ marginRight: 5, marginBottom: 10 }}
-              />
-              <Text>Li Ka Sheng</Text>
-            </View>
-            <View style={styles.iconAndText}>
-              <Ionicons
-                name="people-sharp"
-                size={18}
-                color={"grey"}
-                style={{ marginRight: 5 }}
-              />
-              <Text>100/1500</Text>
-            </View>
-          </View>
+
+        <View style={styles.popup}>
           <View
             style={{
-              flex: 1,
-              width: "30%",
-              alignItems: "center",
-              justifyContent: "center",
+              width: "100%",
+              flexDirection: "row",
+              justifyContent: "flex-start",
             }}
           >
-            <Image
-              style={styles.locationImage}
-              source={require("../images/LKSImage.jpg")}
-            />
+            <View style={{ width: "70%" }}>
+              <Text style={styles.popupTitle}>LKS Library Level 2</Text>
+              <View style={styles.iconAndText}>
+                <Ionicons
+                  name="location-sharp"
+                  size={18}
+                  color={"grey"}
+                  style={{ marginRight: 5, marginBottom: 10 }}
+                />
+                <Text>Li Ka Shing</Text>
+              </View>
+              <View style={styles.iconAndText}>
+                <Ionicons
+                  name="people-sharp"
+                  size={18}
+                  color={"grey"}
+                  style={{ marginRight: 5 }}
+                />
+                <Text>100/1500</Text>
+              </View>
+            </View>
+            <View
+              style={{
+                flex: 1,
+                width: "30%",
+                alignItems: "center",
+                justifyContent: "center",
+              }}
+            >
+              <Image
+                style={styles.locationImage}
+                source={require("../images/LKSImage.jpg")}
+              />
+            </View>
           </View>
         </View>
       </View>
-    </View>
+    </LinearGradient>
   );
 };
 
@@ -84,5 +86,12 @@ const styles = StyleSheet.create({
     height: 90,
     width: 90,
     borderRadius: 10,
+  },
+  titleText: {
+    fontWeight: "medium",
+    fontSize: 20,
+    paddingHorizontal: 14,
+    paddingVertical: 5,
+    color: "white",
   },
 });
