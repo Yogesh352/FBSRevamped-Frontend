@@ -10,7 +10,6 @@ import ProfilePage from "./src/pages/Profile";
 import { TouchableOpacity, View, StyleSheet } from "react-native";
 import HomeStack from "./src/navigation/HomeStack";
 import { LinearGradient } from "expo-linear-gradient";
-import { Header } from "react-native/Libraries/NewAppScreen";
 
 const Tab = createBottomTabNavigator();
 
@@ -53,28 +52,7 @@ const App = () => {
             name="Home"
             component={HomeStack}
             options={{
-              headerStyle: {
-                backgroundColor: "#2349cf",
-                height: 50
-              },
-              headerShadowVisible: false,
-              headerTitleAlign: 'center',
-              headerTitle: 'Home',
-              headerTitleStyle: {
-                color: "white"
-              }
-              // headerBackground: () => (
-              //   <LinearGradient
-              //     colors={["#879fe9", "#2349c2"]}
-              //     style={[StyleSheet.absoluteFill, styles.linearGradient]}
-              //   />
-              // ),
-              // headerTitle: "FBS",
-              // headerTitleStyle: {
-              //   fontWeight: "bold",
-              //   color: "yellow",
-              //   fontSize: 25,
-              // },
+              headerShown: false,
             }}
           />
           <Tab.Screen

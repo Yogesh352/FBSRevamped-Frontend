@@ -1,5 +1,5 @@
 import React, { Component, useRef } from 'react';
-import { Button, View, Text, StyleSheet, Dimensions, Image } from "react-native";
+import { Button, View, Text, StyleSheet, Dimensions, Image, TouchableOpacity } from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
 import Ionic from "react-native-vector-icons/Ionicons";
 import Carousel, { Pagination } from 'react-native-snap-carousel'
@@ -120,7 +120,6 @@ const CarouselCards = () => {
             width: 10,
             height: 10,
             borderRadius: 5,
-            marginHorizontal: 0,
             backgroundColor: 'rgba(0, 0, 0, 0.92)',
           }}
           inactiveDotOpacity={0.4}
@@ -145,11 +144,14 @@ const ActualHome = () => {
                     <Text style={styles.titleText}> Favourites </Text>
                     <CarouselCards />
                     <Text style={styles.titleText}> Instant Seating </Text>
-                    <Image 
-                        source={require('../assets/cafe.png')}
-                        style={styles.findMeSeatButton}
-                        />
-                    <Text style={styles.findMeASeatText}> Find Me A Seat </Text>  
+                    
+                    <TouchableOpacity>
+                        <Image 
+                            source={require('../assets/cafe.png')}
+                            style={styles.findMeSeatButton}
+                            />
+                        <Text style={styles.findMeASeatText}> Find Me A Seat </Text>  
+                    </TouchableOpacity>
                 </View>
             </LinearGradient>
         </View>
@@ -158,7 +160,7 @@ const ActualHome = () => {
 
 const styles = StyleSheet.create({
     content: {
-        margin: 16,
+        marginHorizontal: 16,
         borderRadius: 15,
         // shadowColor: 'black',
         // elevation: 20, 
@@ -184,6 +186,7 @@ const styles = StyleSheet.create({
         width: 80,
         height: 60,
         borderRightWidth: 1,
+        borderColor: "purple"
         // flex: 1
     },
     date: {

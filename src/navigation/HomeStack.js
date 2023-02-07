@@ -17,28 +17,37 @@ const HomeStack = () => {
 
       <Stack.Group
         screenOptions={{
-          headerTitle: "FBS",
-          headerTitleStyle: {
-            fontWeight: "bold",
-            color: "white",
-            fontSize: 25,
-          },
-          headerBackground: () => (
-            <LinearGradient
-              colors={["#879fe9", "#2349c2"]}
-              style={[StyleSheet.absoluteFill]}
-            />
-          ),
+          // headerTitleStyle: {
+          //   fontWeight: "bold",
+          //   color: "white",
+          //   fontSize: 25,
+          // },
+          // headerBackground: () => (
+          //   <LinearGradient
+          //     colors={["#879fe9", "#2349c2"]}
+          //     style={[StyleSheet.absoluteFill]}
+          //   />
+          // ),
+          // headerStyle: {
+          //   height: 150,
+          // },
           headerStyle: {
-            height: 150,
+            backgroundColor: "#2349cf",
+            height: 50
           },
+          headerShadowVisible: false,
+          headerTitleAlign: 'center',
+          headerTitle: 'Home',
+          headerTitleStyle: {
+            color: "white"
+          }
         }}
       >
-        <Stack.Screen name="Default" component={HomePage} />
-        <Stack.Screen name="Bookings" component={BookingPage} />
-        <Stack.Screen name="Listings" component={ListingsPage} />
-        <Stack.Screen name="LandingPage" component={ActualHome} />
-        <Stack.Screen name="Filter" component={FilterPage} />
+        <Stack.Screen options={{headerTitle:"Home"}} name="Default" component={HomePage} />
+        <Stack.Screen options={{headerTitle:"Bookings"}} name="Bookings" component={BookingPage} />
+        <Stack.Screen options={{headerTitle:"Listings"}} name="Listings" component={ListingsPage} />
+        <Stack.Screen options={{headerTitle:"Home"}} name="LandingPage" component={ActualHome} />
+        <Stack.Screen options={{headerTitle:"Search"}} name="Filter" component={FilterPage} />
       </Stack.Group>
       <Stack.Group
         screenOptions={{
