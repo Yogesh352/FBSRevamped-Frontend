@@ -145,14 +145,11 @@ const ActualHome = () => {
                     <CarouselCards />
 
                     <Text style={styles.titleText}> Instant Seating </Text>
-                    <Button>
-                        <Image 
-                            source={require('../assets/cafe.png')}
-                            style={styles.findMeSeatButton}
+                    <Image 
+                        source={require('../assets/cafe.png')}
+                        style={styles.findMeSeatButton}
                         />
-                        <Text style={styles.findMeASeatText}> Find Me A Seat </Text>
-                    </Button>
-                      
+                    <Text style={styles.findMeASeatText}> Find Me A Seat </Text>  
                 </View>
             </LinearGradient>
         </View>
