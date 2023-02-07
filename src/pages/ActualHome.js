@@ -1,9 +1,5 @@
 import React, { Component, useRef } from 'react';
-<<<<<<< HEAD
 import { Button, View, Text, StyleSheet, Dimensions, Image } from "react-native";
-=======
-import { View, Text, StyleSheet, Dimensions, Image } from "react-native";
->>>>>>> refs/remotes/origin/Homepage
 import { LinearGradient } from "expo-linear-gradient";
 import Ionic from "react-native-vector-icons/Ionicons";
 import Carousel, { Pagination } from 'react-native-snap-carousel'
@@ -34,11 +30,7 @@ const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul","Aug", "Sep", "O
 function formatDate(hours) {
     if (hours > 11 && hours < 24) {
         return (hours % 12 == 0) ?  "12pm" : (hours % 12) + "pm";
-<<<<<<< HEAD
     } else {
-=======
-    } else if (hours % 12 != 0) {
->>>>>>> refs/remotes/origin/Homepage
         return (hours % 12 == 0) ?  "12am" : (hours % 12) + "am";
     }
 }
@@ -61,11 +53,7 @@ function Booking(props) {
             <Ionic
                 name='location'
                 size={40}
-<<<<<<< HEAD
                 color="#8849cf"
-=======
-                color="#2349cf"
->>>>>>> refs/remotes/origin/Homepage
                 style={styles.checkInButton}
             />
         </View>
@@ -74,7 +62,6 @@ function Booking(props) {
 
 const data = [
     {
-<<<<<<< HEAD
         title: "School of Computing",
         body: "Seminar Room 3-1",
         imgUrl: "https://picsum.photos/id/11/200/300",
@@ -87,32 +74,13 @@ const data = [
     {
         title: "School of Law",
         body: "Classroom B1-1",
-=======
-        title: "Aenean leo",
-        body: "Ut tincidunt tincidunt erat. Sed cursus turpis vitae tortor. Quisque malesuada placerat nisl. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.",
-        imgUrl: "https://picsum.photos/id/11/200/300",
-    },
-    {
-        title: "In turpis",
-        body: "Aenean ut eros et nisl sagittis vestibulum. Donec posuere vulputate arcu. Proin faucibus arcu quis ante. Curabitur at lacus ac velit ornare lobortis. ",
-        imgUrl: "https://picsum.photos/id/10/200/300",
-    },
-    {
-        title: "Lorem Ipsum",
-        body: "Phasellus ullamcorper ipsum rutrum nunc. Nullam quis ante. Etiam ultricies nisi vel augue. Aenean tellus metus, bibendum sed, posuere ac, mattis non, nunc.",
->>>>>>> refs/remotes/origin/Homepage
         imgUrl: "https://picsum.photos/id/12/200/300",
     },
 ];
 
 
-<<<<<<< HEAD
 const SLIDER_WIDTH = Dimensions.get('window').width * 0.93;
 const ITEM_WIDTH = Math.round(SLIDER_WIDTH * 0.92);
-=======
-const SLIDER_WIDTH = Dimensions.get('window').width + 80;
-const ITEM_WIDTH = Math.round(SLIDER_WIDTH * 0.7);
->>>>>>> refs/remotes/origin/Homepage
 
 const CarouselCardItem = ({ item, index }) => {
     return (
@@ -176,16 +144,12 @@ const ActualHome = () => {
 
                     <Text style={styles.titleText}> Favourites </Text>
                     <CarouselCards />
-<<<<<<< HEAD
-
                     <Text style={styles.titleText}> Instant Seating </Text>
                     <Image 
                         source={require('../assets/cafe.png')}
                         style={styles.findMeSeatButton}
                         />
                     <Text style={styles.findMeASeatText}> Find Me A Seat </Text>  
-=======
->>>>>>> refs/remotes/origin/Homepage
                 </View>
             </LinearGradient>
         </View>
@@ -204,12 +168,8 @@ const styles = StyleSheet.create({
     titleText: {
         fontWeight: "medium",
         fontSize: 20,
-<<<<<<< HEAD
         paddingHorizontal: 10,
         paddingVertical: 5,
-=======
-        padding: 10,
->>>>>>> refs/remotes/origin/Homepage
         color: "white"
     },
     box: {
@@ -258,11 +218,7 @@ const styles = StyleSheet.create({
         backgroundColor: 'white',
         borderRadius: 8,
         width: ITEM_WIDTH,
-<<<<<<< HEAD
         paddingBottom: 15,
-=======
-        paddingBottom: 40,
->>>>>>> refs/remotes/origin/Homepage
         shadowColor: "#000",
         shadowOffset: {
           width: 0,
@@ -274,7 +230,6 @@ const styles = StyleSheet.create({
       },
       image: {
         width: ITEM_WIDTH,
-<<<<<<< HEAD
         height: 160,
         borderTopLeftRadius: 8,
         borderTopRightRadius: 8,
@@ -305,23 +260,6 @@ const styles = StyleSheet.create({
           fontSize: 20,
           fontWeight: "bold",
           color: "white",
-=======
-        height: 300,
-      },
-      header: {
-        color: "#222",
-        fontSize: 28,
-        fontWeight: "bold",
-        paddingLeft: 20,
-        paddingTop: 20
-      },
-      body: {
-        color: "#222",
-        fontSize: 18,
-        paddingLeft: 20,
-        paddingLeft: 20,
-        paddingRight: 20
->>>>>>> refs/remotes/origin/Homepage
       }
 })
 
