@@ -14,7 +14,6 @@ const Stack = createNativeStackNavigator();
 const HomeStack = () => {
   return (
     <Stack.Navigator>
-
       <Stack.Group
         screenOptions={{
           // headerTitleStyle: {
@@ -33,42 +32,46 @@ const HomeStack = () => {
           // },
           headerStyle: {
             backgroundColor: "#2349cf",
-            height: 50
+            height: 50,
           },
           headerShadowVisible: false,
-          headerTitleAlign: 'center',
-          headerTitle: 'Home',
+          headerTitleAlign: "center",
+          headerTitle: "Home",
           headerTitleStyle: {
-            color: "white"
-          }
-        }}
-      >
-        <Stack.Screen options={{headerTitle:"Home"}} name="Default" component={HomePage} />
-        <Stack.Screen options={{headerTitle:"Bookings"}} name="Bookings" component={BookingPage} />
-        <Stack.Screen options={{headerTitle:"Listings"}} name="Listings" component={ListingsPage} />
-        <Stack.Screen options={{headerTitle:"Home"}} name="LandingPage" component={ActualHome} />
-        <Stack.Screen options={{headerTitle:"Search"}} name="Filter" component={FilterPage} />
-      </Stack.Group>
-      <Stack.Group
-        screenOptions={{
-          headerTitle: "Section Layout",
-          headerTitleStyle: {
-            fontWeight: "bold",
             color: "white",
-            fontSize: 25,
-          },
-          headerBackground: () => (
-            <LinearGradient
-              colors={["#879fe9", "#2349c2"]}
-              style={[StyleSheet.absoluteFill]}
-            />
-          ),
-          headerStyle: {
-            height: 150,
           },
         }}
       >
-        <Stack.Screen name="Map" component={MapPage} />
+        <Stack.Screen
+          options={{ headerTitle: "Home" }}
+          name="Default"
+          component={HomePage}
+        />
+        <Stack.Screen
+          options={{ headerTitle: "Bookings" }}
+          name="Bookings"
+          component={BookingPage}
+        />
+        <Stack.Screen
+          options={{ headerTitle: "Listings" }}
+          name="Listings"
+          component={ListingsPage}
+        />
+        <Stack.Screen
+          options={{ headerTitle: "Home" }}
+          name="LandingPage"
+          component={ActualHome}
+        />
+        <Stack.Screen
+          options={{ headerTitle: "Search" }}
+          name="Filter"
+          component={FilterPage}
+        />
+        <Stack.Screen
+          name="Map"
+          options={{ headerTitle: "Section View" }}
+          component={MapPage}
+        />
       </Stack.Group>
 
       <Stack.Screen
@@ -76,7 +79,6 @@ const HomeStack = () => {
         component={FacilityInformation}
         options={{ headerShown: false }}
       />
-
     </Stack.Navigator>
   );
 };
