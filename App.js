@@ -32,7 +32,7 @@ const App = () => {
               } else if (route.name === "Profile") {
                 iconName = focused ? "person-circle" : "person-circle-outline";
               }
-              return <Ionic name={iconName} size={size} colour={colour} />;
+              return <Ionic name={iconName} size={30} color={"indigo"} />;
             },
 
             tabBarActiveTintColor: "black",
@@ -93,7 +93,7 @@ const App = () => {
               tabBarButton: (props) => (
                 <TouchableOpacity
                   style={{
-                    top: -30,
+                    top: 2,
                     justifyContent: "center",
                     alignItems: "center",
                   }}
@@ -101,10 +101,10 @@ const App = () => {
                 >
                   <View
                     style={{
-                      width: 70,
-                      height: 70,
+                      width: 60,
+                      height: 60,
                       borderRadius: 35,
-                      backgroundColor: "#1D889F",
+                      backgroundColor: "#8849cf",
                       justifyContent: "center",
                       alignItems: "center",
                       shadow: {
@@ -119,7 +119,7 @@ const App = () => {
                       elevation: 5,
                     }}
                   >
-                    <Ionic name="scan" colour="black" size={35} />
+                    <Ionic name="scan" color="white" size={35} />
                   </View>
                 </TouchableOpacity>
               ),
