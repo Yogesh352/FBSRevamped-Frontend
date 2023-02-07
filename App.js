@@ -41,7 +41,7 @@ const App = () => {
             tabBarShowLabel: false,
 
             tabBarStyle: {
-              height: 60,
+              height: 70,
               paddingBottom: 5,
               position: "absolute",
               borderTopLeftRadius: 10,
