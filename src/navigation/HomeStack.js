@@ -2,7 +2,7 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import React from "react";
 import { LinearGradient } from "expo-linear-gradient";
 import ActualHome from "../pages/ActualHome";
-import { StyleSheet } from "react-native";
+import { StyleSheet, Button, LogoTitle } from "react-native";
 import BookingPage from "../pages/Booking";
 import FacilityInformation from "../pages/FacilityInformation";
 import FilterPage from "../pages/Filter";

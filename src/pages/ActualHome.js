@@ -238,14 +238,14 @@ const styles = StyleSheet.create({
         borderTopRightRadius: 8,
       },
       header: {
-        color: "#222",
+        color: "indigo",
         fontSize: 20,
         fontWeight: "bold",
         paddingLeft: 20,
         paddingTop: 10
       },
       body: {
-        color: "#222",
+        color: "indigo",
         fontSize: 16,
         paddingLeft: 20,
         paddingRight: 20
