@@ -18,18 +18,19 @@ const FilterPage = ({ navigation }) => {
       console.log(dateSelected)
   }
 
-  const [isDatePickerVisible, setDatePickerVisibility] = useState(false);
+  const [isStartTimeVisible, setStartTimeVisibility] = useState(false);
   const showStartTimePicker = () => {
-      setDatePickerVisibility(true);
+    setStartTimeVisibility(true);
   };
   const hideStartTimePicker = () => {
-      setDatePickerVisibility(false);
+    setStartTimeVisibility(false);
   };
+  const [isEndTimeVisible, setEndTimeVisibility] = useState(false);
   const showEndTimePicker = () => {
-      setDatePickerVisibility(true);
+    setEndTimeVisibility(true);
   };
   const hideEndTimePicker = () => {
-      setDatePickerVisibility(false);
+    setEndTimeVisibility(false);
   };
   const [startTimeSelected, setStartTimeChange] = React.useState('');
   const handleStartConfirm = (startTime) => {
@@ -75,7 +76,7 @@ const FilterPage = ({ navigation }) => {
                         <Text style={styles.timeText}>SELECT START TIME</Text>
                 </TouchableOpacity>
                 <DateTimePickerModal
-                    isVisible={isDatePickerVisible}
+                    isVisible={isStartTimeVisible}
                     mode="time"
                     onConfirm={handleStartConfirm}
                     onCancel={hideStartTimePicker}
@@ -89,7 +90,7 @@ const FilterPage = ({ navigation }) => {
                         <Text style={styles.timeText}>SELECT END TIME</Text>
                 </TouchableOpacity>
                 <DateTimePickerModal
-                    isVisible={isDatePickerVisible}
+                    isVisible={isEndTimeVisible}
                     mode="time"
                     onConfirm={handleEndConfirm}
                     onCancel={hideEndTimePicker}
