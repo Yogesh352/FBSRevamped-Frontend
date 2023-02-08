@@ -1,8 +1,9 @@
 import { Button, Text, View, StyleSheet } from "react-native";
 import React, { useState, useEffect } from "react";
 import { BarCodeScanner } from "expo-barcode-scanner";
+import { LinearGradient } from "expo-linear-gradient";
 // import { Icon } from "@iconify/react";
-import Icon from 'react-native-vector-icons/FontAwesome';
+import Icon from "react-native-vector-icons/FontAwesome";
 
 // expo start --tunnel
 const ScanningPage = ({ navigation }) => {
@@ -28,7 +29,7 @@ const ScanningPage = ({ navigation }) => {
         setScanned(true);
         // setText(data);
         // console.log("Type: " + type + "\nData: " + data);
-        navigation.navigate('FacilityInfo');
+        navigation.navigate("FacilityInfo");
     };
 
     if (hasPermission === false) {
@@ -44,21 +45,26 @@ const ScanningPage = ({ navigation }) => {
     }
 
     return (
-        <View style={styles.container}>
-            <View style={styles.instruction}>
-                <Text style={styles.maintext}>Scan QR code below:</Text>
+        <LinearGradient
+            style={{ height: "100%" }}
+            colors={["#2349cf", "#B79fe9"]}
+        >
+            <View style={styles.container}>
+                <View style={styles.instruction}>
+                    <Text style={styles.maintext}>Scan QR code below:</Text>
+                </View>
+
+                <View style={styles.barcodebox}>
+                    <BarCodeScanner
+                        onBarCodeScanned={
+                            scanned ? undefined : handleQRCodescanned
+                        }
+                        style={styles.barcodescanner}
+                    ></BarCodeScanner>
+                </View>
+                {/* <Text styles={styles.maintext}>{text}</Text> */}
             </View>
-            
-            <View style={styles.barcodebox}>
-                <BarCodeScanner
-                    onBarCodeScanned={scanned ? undefined : handleQRCodescanned}
-                    style={styles.barcodescanner}
-                >
-                    
-                </BarCodeScanner>
-            </View>
-            {/* <Text styles={styles.maintext}>{text}</Text> */}
-        </View>
+        </LinearGradient>
     );
 };
 
@@ -80,7 +86,7 @@ const styles = StyleSheet.create({
     maintext: {
         fontSize: 20,
         fontWeight: "bold",
-        // color: 'red',
+        color: 'white',
     },
     barcodebox: {
         // flex: 1,
