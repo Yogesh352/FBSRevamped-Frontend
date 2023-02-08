@@ -6,7 +6,7 @@ import { LinearGradient } from "expo-linear-gradient";
 import Icon from "react-native-vector-icons/FontAwesome";
 
 // expo start --tunnel
-const ScanningPage = ({ navigation }) => {
+const Scanning = ({ navigation }) => {
     const [hasPermission, setHasPermission] = useState(null);
     const [scanned, setScanned] = useState(false);
     const [text, setText] = useState("Not yet scanned");
@@ -50,9 +50,9 @@ const ScanningPage = ({ navigation }) => {
             colors={["#2349cf", "#B79fe9"]}
         >
             <View style={styles.container}>
-                <View style={styles.instruction}>
+                {/* <View style={styles.instruction}>
                     <Text style={styles.maintext}>Scan QR code below:</Text>
-                </View>
+                </View> */}
 
                 <View style={styles.barcodebox}>
                     <BarCodeScanner
@@ -106,4 +106,4 @@ const styles = StyleSheet.create({
     },
 });
 
-export default ScanningPage;
+export default Scanning;
