@@ -11,9 +11,10 @@ const MockLayout = () => {
         width: "100%",
         paddingRight: 10,
         paddingLeft: 10,
+        paddingTop: 10,
       }}
     >
-      <Svg height="140%" width="100%" viewBox="0 20 100 100">
+      <Svg height="90%" width="100%" viewBox="0 0 100 100">
         {CoordinatesData.map((CoordinatesData) => {
           return (
             <G
@@ -35,7 +36,6 @@ const MockLayout = () => {
                       ? CoordinatesData.rectangle.color
                       : "white"
                   }
-                  rx="2"
                 />
               )}
               {CoordinatesData.text && (
@@ -45,7 +45,7 @@ const MockLayout = () => {
                   y={CoordinatesData.text.y}
                   textAnchor="middle"
                   fill="#5A5A5A"
-                  fontSize="4"
+                  fontSize="5"
                   fontWeight="bold"
                   fontFamily="Roboto"
                 >

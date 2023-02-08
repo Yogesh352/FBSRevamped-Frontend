@@ -2,78 +2,114 @@ export const CoordinatesData = [
   {
     rectangle: {
       x: 0,
-      y: 0,
-      width: "27%",
-      height: "20",
+      y: 80,
+      width: "30%",
+      height: "25",
+      color: "#c4a4e7",
     },
     text: {
-      output: "Printing",
+      output: "A",
       width: "5",
-      x: "14",
-      y: "8",
+      x: "15",
+      y: "93",
     },
   },
-  {
-    text: {
-      output: "Room",
-      y: "14",
-      x: "14",
-    },
-  },
+  // {
+  //   text: {
+  //     output: "Room",
+  //     y: "14",
+  //     x: "14",
+  //   },
+  // },
   {
     rectangle: {
       x: 0,
-      y: 20,
-      width: "27%",
-      height: "100",
-    },
-    text: {
-      output: "LKS2-1",
-      width: "5",
-      x: "13",
-      y: "60",
+      y: 0,
+      width: "20%",
+      height: "80",
     },
   },
   {
     rectangle: {
-      x: 27,
-      y: 60,
-      width: "43",
-      height: "40",
-    },
-    text: {
-      output: "LKS2-2",
-      width: "5",
-      x: "48",
-      y: "80",
+      x: 20,
+      y: 0,
+      width: "55",
+      height: "70",
     },
   },
   {
     rectangle: {
-      x: "27",
-      y: "100",
-      width: "43",
+      x: "30",
+      y: "0",
+      width: "35",
       height: "20",
     },
     text: {
       output: "Lift",
       width: "5",
       x: "48",
-      y: "110",
+      y: "10",
     },
   },
   {
     rectangle: {
-      x: "70",
-      y: "20",
+      x: "20",
+      y: "70",
+      width: "10",
+      height: "10",
+    },
+  },
+  {
+    rectangle: {
+      x: "20",
+      y: "35",
       width: "30%",
-      height: "100",
+      height: "35",
+      color: "#c4a4e7",
     },
     text: {
-      output: "LKS2-3",
+      output: "B",
       width: "5",
-      x: "85",
-      y: "60",
+      x: "35",
+      y: "53",
+    },
+  },
+  {
+    rectangle: {
+      x: "75",
+      y: "0",
+      width: "25%",
+      height: "70",
+      color: "#c4a4e7",
+    },
+    text: {
+      output: "C",
+      width: "5",
+      x: "88",
+      y: "35",
+    },
+  },
+  {
+    rectangle: {
+      x: "30",
+      y: "70",
+      width: "20%",
+      height: "35",
+    },
+  },
+  {
+    rectangle: {
+      x: "50",
+      y: "70",
+      width: "50%",
+      height: "35",
+      color: "#c4a4e7",
+    },
+
+    text: {
+      x: "75",
+      y: "88",
+      output: "D",
     },
   },
 ];
