@@ -5,6 +5,7 @@ export const CoordinatesData = [
       y: 80,
       width: "30%",
       height: "25",
+      color: "#c4a4e7",
     },
     text: {
       output: "A",
@@ -35,12 +36,6 @@ export const CoordinatesData = [
       width: "55",
       height: "70",
     },
-    text: {
-      output: "LKS2-2",
-      width: "5",
-      x: "48",
-      y: "80",
-    },
   },
   {
     rectangle: {
@@ -70,6 +65,7 @@ export const CoordinatesData = [
       y: "35",
       width: "30%",
       height: "35",
+      color: "#c4a4e7",
     },
     text: {
       output: "B",
@@ -84,6 +80,7 @@ export const CoordinatesData = [
       y: "0",
       width: "25%",
       height: "70",
+      color: "#c4a4e7",
     },
     text: {
       output: "C",
@@ -106,13 +103,13 @@ export const CoordinatesData = [
       y: "70",
       width: "50%",
       height: "35",
+      color: "#c4a4e7",
     },
 
     text: {
       x: "75",
       y: "88",
       output: "D",
-      
     },
   },
 ];
