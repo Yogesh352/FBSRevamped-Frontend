@@ -25,7 +25,7 @@ const ExpandableComponent = ({item, onClickFunction}) => {
   }, [item.isExpanded]);
 
   return (
-    <View style={{width: '100%', flexDirection: 'column'}}>
+    <View style={{width: '100%', flexDirection: 'column', backgroundColor: 'transparent'}}>
       {/*Header of the Expandable List Item*/}
       <TouchableOpacity
         activeOpacity={0.8}
@@ -87,10 +87,10 @@ const FacilitiesListing = () => {
   };
 
   return (
-    <View style={{width: '97%', flex: 1, marginTop: '20%'}}>
+    <View style={{width: '97%', flex: 1, marginTop: '0%', backgroundColor: 'transparent'}}>
       <View style={styles.container}>
-        <View style={{flexDirection: 'row', padding: 10}}>
-          <Text style={styles.titleText}>Facilities</Text>
+        <View style={{flexDirection: 'row-reverse', padding: 4}}>
+          {/* <Text style={styles.titleText}>Facilities</Text> */}
           <TouchableOpacity
             onPress={() => setMultiSelect(!multiSelect)}>
             <Text
