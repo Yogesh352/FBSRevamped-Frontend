@@ -1,4 +1,4 @@
-import React, { Component, useRef, useState } from "react";
+import React, { useState } from "react";
 import {
   ScrollView,
   View,
@@ -6,8 +6,6 @@ import {
   Dimensions,
 } from "react-native";
 import { Text } from "react-native-paper";
-import { LinearGradient } from "expo-linear-gradient";
-import Carousel, { Pagination } from "react-native-snap-carousel";
 import BookingComponent from "../components/Homepage/BookingComponent"
 import FavouritesComponent from "../components/Homepage/FavouritesComponent";
 import InstantBooking from "../components/Homepage/InstantBooking";
