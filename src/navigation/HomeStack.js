@@ -93,7 +93,7 @@ export default HomeStack;
 
 const styles = StyleSheet.create({
   main: {
-    backgroundColor: "#F4F6FB",
+    backgroundColor: "#1a2222",
   },
   linearGradient: {
     height: 150,
