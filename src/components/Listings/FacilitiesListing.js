@@ -39,6 +39,7 @@ const ExpandableComponent = ({item, onClickFunction}) => {
         style={{
           height: layoutHeight,
           overflow: 'hidden',
+          marginTop: 5
         }}>
         {/*Content under the header of the Expandable List Item*/}
         {item.subcategory.map((item, key) => (
@@ -87,7 +88,7 @@ const FacilitiesListing = () => {
   };
 
   return (
-    <View style={{width: '97%', flex: 1, marginTop: '0%', backgroundColor: 'transparent'}}>
+    <View style={{width: '100%', flex: 1, marginTop: '0%', backgroundColor: 'transparent'}}>
       <View style={styles.container}>
         <View style={{flexDirection: 'row-reverse', padding: 4}}>
           {/* <Text style={styles.titleText}>Facilities</Text> */}
@@ -125,6 +126,7 @@ export default FacilitiesListing;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    color: 'transparent',
   },
   titleText: {
     flex: 1,
@@ -132,16 +134,21 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
   },
   header: {
-    backgroundColor: '#B774FF',
-    padding: 20,
+    backgroundColor: 'white',
+    padding: 10,
+    justifyContent: 'center',
     borderRadius: 5,
     borderWidth: 1,
     borderColor: 'black',
-    margin: 1
+    margin: 1,
+    height: 60,
   },
   headerText: {
     fontSize: 16,
-    fontWeight: '500',
+    fontWeight: 'medium',
+    textAlign: 'left',
+    paddingLeft: 0,
+    marginLeft: 0
   },
 //   separator: {
 //     height: 0.5,
@@ -154,13 +161,12 @@ const styles = StyleSheet.create({
     padding: 10,
   },
   content: {
-    paddingLeft: 10,
-    paddingRight: 10,
-    width: '98%',
+    paddingLeft: 5,
+    width: '97%',
     alignSelf: 'center',
     justifyContent: 'center',
-    backgroundColor: '#D2ADFE',
-    borderWidth: 1,
+    backgroundColor: '#E7E7E7',
+    borderWidth: 0.5,
     borderBottomWidth: 0,
     borderColor: 'black',
   },

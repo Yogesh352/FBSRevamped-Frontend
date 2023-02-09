@@ -51,27 +51,25 @@ function FacilityTypeDropdown(props) {
         <View>
             <View>
                 <View style={{
-                    backgroundColor: '#FFFFFF',
+                    backgroundColor: 'transparent',
                     alignItems: 'center',
                     justifyContent: 'center',
                     paddingHorizontal: 1,
                     paddingLeft: 2,
-                    maxWidth: '97%',
+                    maxWidth: '100%',
                     zIndex: 2
                     }}>
                     <View style={{
-                        paddingBottom: 5,
-                        fontSize: 100,
                         flexDirection: 'row'
                         }}>
                             <View style={{flex: 3}}>
-                                <Text>Facility Type</Text>
+                                <Text style={styles.titleText}>Facility Type</Text>
                             </View>
                             <View style={{flex: 1}}>
                                 <TouchableOpacity 
                                     onPress={reset} 
                                     activeOpacity={0}>
-                                        <Text style={{textAlign: 'right'}}>Reset</Text>
+                                        <Text style={styles.resetText}>Reset</Text>
                                 </TouchableOpacity>
                             </View>
                     </View>
@@ -90,6 +88,11 @@ function FacilityTypeDropdown(props) {
                         placeholder="Select a facilty type"
                         onSelectItem={addItem
                             }
+                        style={{
+                            backgroundColor: "white",
+                            borderColor: 'white',
+                            height: 60
+                            }}                     
 
                 
                         theme="LIGHT"
@@ -107,3 +110,31 @@ function FacilityTypeDropdown(props) {
 }
 
 export default FacilityTypeDropdown;
+
+const styles = StyleSheet.create({
+    titleText: {
+        fontWeight: "medium",
+        fontSize: 20,
+        paddingHorizontal: 10,
+        paddingVertical: 5,
+        color: "white"
+    },
+    resetText: {
+        fontWeight: "medium",
+        fontSize: 20,
+        paddingHorizontal: 10,
+        paddingVertical: 5,
+        color: "white",
+        textAlign: 'right'
+    },
+    content: {
+        marginHorizontal: 16,
+        borderRadius: 15,
+        // shadowColor: 'black',
+        // elevation: 20, 
+        height: "85%",
+        flexDirection: 'row',
+        // backgroundColor: "#edeff0",
+    },
+})
+

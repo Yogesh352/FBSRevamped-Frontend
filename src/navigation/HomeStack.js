@@ -9,6 +9,7 @@ import FilterPage from "../pages/Filter";
 import HomePage from "../pages/Home";
 import ListingsPage from "../pages/Listings";
 import MapPage from "../pages/Map";
+import RoomDetailsPage from "../pages/RoomDetail";
 
 const Stack = createNativeStackNavigator();
 const HomeStack = () => {
@@ -71,6 +72,11 @@ const HomeStack = () => {
           name="Map"
           options={{ headerTitle: "Section View" }}
           component={MapPage}
+        />
+        <Stack.Screen
+          name="RoomDetail"
+          options={{ headerTitle: "Details" }}
+          component={RoomDetailsPage}
         />
       </Stack.Group>
 
