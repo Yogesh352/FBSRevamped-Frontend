@@ -14,19 +14,13 @@ export const CoordinatesData = [
       y: "93",
     },
   },
-  // {
-  //   text: {
-  //     output: "Room",
-  //     y: "14",
-  //     x: "14",
-  //   },
-  // },
   {
     rectangle: {
       x: 0,
       y: 0,
       width: "20%",
       height: "80",
+    
     },
   },
   {

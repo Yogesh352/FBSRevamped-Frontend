@@ -9,6 +9,7 @@ import FilterPage from "../pages/Filter";
 import HomePage from "../pages/Home";
 import ListingsPage from "../pages/Listings";
 import MapPage from "../pages/Map";
+import Scanning from "../pages/Scanning.js";
 
 const Stack = createNativeStackNavigator();
 const HomeStack = () => {
@@ -31,7 +32,7 @@ const HomeStack = () => {
           //   height: 150,
           // },
           headerStyle: {
-            backgroundColor: "#2349cf",
+            backgroundColor: "#1a2222",
             height: 50,
           },
           headerShadowVisible: false,
@@ -72,13 +73,18 @@ const HomeStack = () => {
           options={{ headerTitle: "Section View" }}
           component={MapPage}
         />
+        <Stack.Screen
+          name="FacilityInfo"
+          component={FacilityInformation}
+          options={{ headerTitle: "Facility Information" }}
+        />
+        <Stack.Screen
+          name="Scanning"
+          component={ Scanning }
+          options={{ headerTitle: "Scan QR Code" }}
+        />
       </Stack.Group>
 
-      <Stack.Screen
-        name="FacilityInfo"
-        component={FacilityInformation}
-        options={{ headerShown: false }}
-      />
     </Stack.Navigator>
   );
 };

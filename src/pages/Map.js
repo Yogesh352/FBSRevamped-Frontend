@@ -11,6 +11,7 @@ const MapPage = ({ navigation }) => {
         <View
           style={{
             width: "50%",
+            
             height: "10%",
             alignSelf: "center",
           }}
@@ -31,7 +32,7 @@ const MapPage = ({ navigation }) => {
           </Swiper>
         </View>
         {/* <Text style={styles.titleText}>Section Availability</Text> */}
-        <View style={{ height: "60%" }}>
+        <View style={{ height: "60%", paddingHorizontal: 20 }}>
           <MockLayout />
         </View>
 
@@ -49,19 +50,19 @@ const MapPage = ({ navigation }) => {
                 <Ionicons
                   name="location-sharp"
                   size={18}
-                  color={"grey"}
+                  color={"indigo"}
                   style={{ marginRight: 5, marginBottom: 10 }}
                 />
-                <Text>Li Ka Shing</Text>
+                <Text style={{ color:"indigo" }}>Li Ka Shing</Text>
               </View>
               <View style={styles.iconAndText}>
                 <Ionicons
                   name="people-sharp"
                   size={18}
-                  color={"grey"}
+                  color={"indigo"}
                   style={{ marginRight: 5 }}
                 />
-                <Text>100/1500</Text>
+                <Text style={{ color:"indigo" }}>100/1500</Text>
               </View>
             </View>
             <View
@@ -99,6 +100,7 @@ const styles = StyleSheet.create({
     fontSize: 20,
     fontWeight: "bold",
     marginBottom: 10,
+    color:"indigo"
   },
   iconAndText: {
     width: "100%",

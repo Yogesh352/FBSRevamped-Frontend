@@ -77,18 +77,18 @@ const App = () => {
             name="Scanning"
             component={ScanningPage}
             options={{
-              headerTitle: "FBS",
-              headerTitleStyle: {
-                fontWeight: "bold",
-                color: "white",
-                fontSize: 25,
+              headerStyle: {
+                backgroundColor: "#2349cf",
+                height: 80,
               },
-              headerBackground: () => (
-                <LinearGradient
-                  colors={["#879fe9", "#2349c2"]}
-                  style={[StyleSheet.absoluteFill]}
-                />
-              ),
+              headerShadowVisible: false,
+              headerTitleAlign: "center",
+              headerTitle: "Scanning",
+              
+              headerTitleStyle: {
+                color: "white",
+              },
+            
               
               tabBarButton: (props) => (
                 <TouchableOpacity
