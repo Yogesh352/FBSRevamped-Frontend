@@ -58,6 +58,7 @@ const ActualHome = () => {
   );
 };
 
+
 const { height, width } = Dimensions.get("window");
 
 const styles = StyleSheet.create({
