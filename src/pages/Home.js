@@ -41,6 +41,7 @@ const HomePage = ({ navigation }) => {
       >
         <Text style={styles.buttonText}>Facility Information Page</Text>
       </TouchableOpacity>
+     
     </View>
   );
 };
