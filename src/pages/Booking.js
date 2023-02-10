@@ -1,36 +1,59 @@
 import { Button, Text, View, StyleSheet,TouchableOpacity, Image, ScrollView, FlatList } from "react-native";
-
-
+import DatePicker from "react-native-date-picker";
+import { useState } from "react";
+//import { Button } from 'react-native'
 function DateButton({first, second, third}) {
   return(
     <View style={{ flexDirection: "row",  backgroundColor: "#F4F6FB"}}>
+       <View style={styles.space} />
       <TouchableOpacity
         
         style={styles.buttonContainer}
       >
         <Text style={styles.buttonText}>{first}</Text>
       </TouchableOpacity>
+      <View style={styles.space} />
       <TouchableOpacity
         
         style={styles.buttonContainer}
       >
         <Text style={styles.buttonText}>{second}</Text>
       </TouchableOpacity>
+      <View style={styles.space} />  
       <TouchableOpacity
         
         style={styles.buttonContainer}
       >
         <Text style={styles.buttonText}>{third}</Text>
       </TouchableOpacity>
+      <View style={styles.space} />
       </View>
   )
 }
 
 const BookingPage = ({ navigation }) => {
+  const [date, setDate] = useState(new Date())
+  const [open, setOpen] = useState(false)
+
   return (
     
       <View >
       <Text style ={styles.headerText}>LKS Seat 80</Text>
+      {/* <View style = {styles.datePicker}>
+      <Button title="Open" onPress={() => setOpen(true)} />
+      <DatePicker
+       modal
+       open={open}
+       date={date}
+       onConfirm={(date) => {
+         setOpen(false)
+         setDate(date)
+       }}
+       onCancel={() => {
+         setOpen(false)
+       }}/>
+      </View> */}
+      
       <Image source={require('../images/LKSImage.jpg')}
       style = {styles.imageStyle}/>
       <Text style ={styles.titleText}>Available Booking Slots</Text>
@@ -43,7 +66,7 @@ const BookingPage = ({ navigation }) => {
         {/* <DateButton first = {"5.00PM"} second = {"6.00PM"} third = {"7.00PM"}></DateButton> */}
       </View>
 
-      <View style={{ padding: 10, flex: 1, backgroundColor: "#F4F6FB" }}>
+      <View style={{ padding: 10, marginVertical: 30, backgroundColor: "#F4F6FB" }}>
       <TouchableOpacity
         style={styles.confirmContainer}
       >
@@ -70,7 +93,7 @@ const styles = StyleSheet.create({
     marginBottom: 2,
     paddingVertical: 8,
     paddingHorizontal: 10,
-    // width: "50%",
+    //width: "50%",
   },
   buttonText: {
     fontSize: 15,
@@ -103,7 +126,19 @@ const styles = StyleSheet.create({
     backgroundColor: "#2349c2",
     borderRadius: 10,
     marginBottom: 20,
-    paddingVertical: 10,
+    paddingVertical: 12,
     paddingHorizontal: 12,
+  },
+  datePicker: {
+    width: '80%',
+    backgroundColor: '#751811',
+    padding: 10,
+    marginHorizontal: 20,
+    marginVertical: 20,
+    borderRadius: 5
+  },
+  space: {
+    width: 5,
+    
   },
 });
