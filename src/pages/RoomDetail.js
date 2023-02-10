@@ -1,4 +1,4 @@
-import { Button, Text, View, StyleSheet } from "react-native";
+import { Button, Text, View, StyleSheet, Image } from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
 
 const RoomDetailsPage = ({ navigation }) => {
@@ -22,7 +22,12 @@ const RoomDetailsPage = ({ navigation }) => {
                   STATUS: {"\n"}
                   Available for booking {"\n"}
               </Text>
-                
+            </View>
+
+            <View>
+              <Image
+                  style={{width:'100%', resizeMode: "contain"}} 
+                  source={require("../images/LevelLayoutTest.jpg")}/>
             </View>
         </LinearGradient>
       
