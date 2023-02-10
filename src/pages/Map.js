@@ -6,89 +6,95 @@ import Swiper from "react-native-swiper";
 
 const MapPage = ({ navigation }) => {
   return (
-    <LinearGradient style={{ height: "100%" }} colors={["#2349cf", "#B79fe9"]}>
-      <View style={{ flex: 1, height: "100%" }}>
+    // <LinearGradient style={{ height: "100%" }} colors={["#2349cf", "#B79fe9"]}>
+    <View style={styles.content}>
+      <View
+        style={{
+          width: "50%",
+
+          height: "10%",
+          alignSelf: "center",
+        }}
+      >
+        <Swiper
+          style={styles.wrapper}
+          showsButtons
+          showsPagination={false}
+          // nextButton={<Text style={styles.buttonText}>›</Text>}
+          // prevButton={<Text style={styles.buttonText}>‹</Text>}
+        >
+          <View style={styles.slide1}>
+            <Text style={styles.text}>Level 3</Text>
+          </View>
+          <View style={styles.slide1}>
+            <Text style={styles.text}>Level 2</Text>
+          </View>
+        </Swiper>
+      </View>
+      {/* <Text style={styles.titleText}>Section Availability</Text> */}
+      <View style={{ height: "60%", paddingHorizontal: 20 }}>
+        <MockLayout />
+      </View>
+
+      <View style={styles.popup}>
         <View
           style={{
-            width: "50%",
-            height: "10%",
-            alignSelf: "center",
+            width: "100%",
+            flexDirection: "row",
+            justifyContent: "flex-start",
           }}
         >
-          <Swiper
-            style={styles.wrapper}
-            showsButtons
-            showsPagination={false}
-            // nextButton={<Text style={styles.buttonText}>›</Text>}
-            // prevButton={<Text style={styles.buttonText}>‹</Text>}
-          >
-            <View style={styles.slide1}>
-              <Text style={styles.text}>Level 3</Text>
+          <View style={{ width: "70%" }}>
+            <Text style={styles.popupTitle}>LKS Library Level 2</Text>
+            <View style={styles.iconAndText}>
+              <Ionicons
+                name="location-sharp"
+                size={18}
+                color={"#e9e8ea"}
+                style={{ marginRight: 5, marginBottom: 10 }}
+              />
+              <Text style={{ color: "#e9e8ea" }}>Li Ka Shing</Text>
             </View>
-            <View style={styles.slide1}>
-              <Text style={styles.text}>Level 2</Text>
+            <View style={styles.iconAndText}>
+              <Ionicons
+                name="people-sharp"
+                size={18}
+                color={"#e9e8ea"}
+                style={{ marginRight: 5 }}
+              />
+              <Text style={{ color: "#e9e8ea" }}>100/1500</Text>
             </View>
-          </Swiper>
-        </View>
-        {/* <Text style={styles.titleText}>Section Availability</Text> */}
-        <View style={{ height: "60%" }}>
-          <MockLayout />
-        </View>
-
-        <View style={styles.popup}>
+          </View>
           <View
             style={{
-              width: "100%",
-              flexDirection: "row",
-              justifyContent: "flex-start",
+              flex: 1,
+              width: "30%",
+              alignItems: "center",
+              justifyContent: "center",
             }}
           >
-            <View style={{ width: "70%" }}>
-              <Text style={styles.popupTitle}>LKS Library Level 2</Text>
-              <View style={styles.iconAndText}>
-                <Ionicons
-                  name="location-sharp"
-                  size={18}
-                  color={"grey"}
-                  style={{ marginRight: 5, marginBottom: 10 }}
-                />
-                <Text>Li Ka Shing</Text>
-              </View>
-              <View style={styles.iconAndText}>
-                <Ionicons
-                  name="people-sharp"
-                  size={18}
-                  color={"grey"}
-                  style={{ marginRight: 5 }}
-                />
-                <Text>100/1500</Text>
-              </View>
-            </View>
-            <View
-              style={{
-                flex: 1,
-                width: "30%",
-                alignItems: "center",
-                justifyContent: "center",
-              }}
-            >
-              <Image
-                style={styles.locationImage}
-                source={require("../images/LKSImage.jpg")}
-              />
-            </View>
+            <Image
+              style={styles.locationImage}
+              source={require("../images/LKSImage.jpg")}
+            />
           </View>
         </View>
       </View>
-    </LinearGradient>
+    </View>
+    // </LinearGradient>
   );
 };
 
 export default MapPage;
 
 const styles = StyleSheet.create({
+  content: {
+    backgroundColor: "#1a2222",
+    height: "100%",
+    flex: 1,
+  },
   popup: {
-    backgroundColor: "white",
+    backgroundColor: "#293637",
     height: "40%",
     borderTopLeftRadius: 30,
     borderTopRightRadius: 30,
@@ -99,6 +105,7 @@ const styles = StyleSheet.create({
     fontSize: 20,
     fontWeight: "bold",
     marginBottom: 10,
+    color: "#e9e8ea",
   },
   iconAndText: {
     width: "100%",

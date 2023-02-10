@@ -32,7 +32,7 @@ const App = () => {
               } else if (route.name === "Profile") {
                 iconName = focused ? "person-circle" : "person-circle-outline";
               }
-              return <Ionic name={iconName} size={30} color={"indigo"} />;
+              return <Ionic name={iconName} size={30} color={"#899190"} />;
             },
 
             tabBarActiveTintColor: "black",
@@ -45,6 +45,8 @@ const App = () => {
               position: "absolute",
               borderTopLeftRadius: 10,
               borderTopRightRadius: 10,
+              borderColor: "transparent",
+              backgroundColor: "#081113"
             },
           })}
         >
@@ -77,23 +79,23 @@ const App = () => {
             name="Scanning"
             component={ScanningPage}
             options={{
-              headerTitle: "FBS",
-              headerTitleStyle: {
-                fontWeight: "bold",
-                color: "white",
-                fontSize: 25,
+              headerStyle: {
+                backgroundColor: "#2349cf",
+                height: 80,
               },
-              headerBackground: () => (
-                <LinearGradient
-                  colors={["#879fe9", "#2349c2"]}
-                  style={[StyleSheet.absoluteFill]}
-                />
-              ),
+              headerShadowVisible: false,
+              headerTitleAlign: "center",
+              headerTitle: "Scanning",
+              
+              headerTitleStyle: {
+                color: "white",
+              },
+            
               
               tabBarButton: (props) => (
                 <TouchableOpacity
                   style={{
-                    top: 2,
+                    top: 4,
                     justifyContent: "center",
                     alignItems: "center",
                   }}
@@ -103,8 +105,8 @@ const App = () => {
                     style={{
                       width: 60,
                       height: 60,
-                      borderRadius: 35,
-                      backgroundColor: "#8849cf",
+                      borderRadius: 50,
+                      backgroundColor: "#8eaec5",
                       justifyContent: "center",
                       alignItems: "center",
                       shadow: {

@@ -5,7 +5,7 @@ export const CoordinatesData = [
       y: 80,
       width: "30%",
       height: "25",
-      color: "#c4a4e7",
+      color: "#4a5a64",
     },
     text: {
       output: "A",
@@ -14,19 +14,13 @@ export const CoordinatesData = [
       y: "93",
     },
   },
-  // {
-  //   text: {
-  //     output: "Room",
-  //     y: "14",
-  //     x: "14",
-  //   },
-  // },
   {
     rectangle: {
       x: 0,
       y: 0,
       width: "20%",
       height: "80",
+      color: "#293637",
     },
   },
   {
@@ -35,6 +29,7 @@ export const CoordinatesData = [
       y: 0,
       width: "55",
       height: "70",
+      color: "#293637",
     },
   },
   {
@@ -43,6 +38,7 @@ export const CoordinatesData = [
       y: "0",
       width: "35",
       height: "20",
+      color: "#293637",
     },
     text: {
       output: "Lift",
@@ -57,6 +53,7 @@ export const CoordinatesData = [
       y: "70",
       width: "10",
       height: "10",
+      color: "#293637",
     },
   },
   {
@@ -65,7 +62,7 @@ export const CoordinatesData = [
       y: "35",
       width: "30%",
       height: "35",
-      color: "#c4a4e7",
+      color: "#4a5a64",
     },
     text: {
       output: "B",
@@ -80,7 +77,7 @@ export const CoordinatesData = [
       y: "0",
       width: "25%",
       height: "70",
-      color: "#c4a4e7",
+      color: "#4a5a64",
     },
     text: {
       output: "C",
@@ -95,6 +92,7 @@ export const CoordinatesData = [
       y: "70",
       width: "20%",
       height: "35",
+      color: "#293637",
     },
   },
   {
@@ -103,7 +101,7 @@ export const CoordinatesData = [
       y: "70",
       width: "50%",
       height: "35",
-      color: "#c4a4e7",
+      color: "#4a5a64",
     },
 
     text: {
