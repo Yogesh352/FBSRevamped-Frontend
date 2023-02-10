@@ -1,5 +1,16 @@
-import { Button, Text, View, StyleSheet, Image } from "react-native";
+import { Button, Text, View, StyleSheet, Image, FlatList } from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
+
+const data = [
+    {
+      building: "School of Computing and Information Systems 1",
+      capacity: "6",
+      cobooker: "1",
+      status: "Available for booking for selected slot",
+      image: require("../images/LevelLayoutTest.jpg"),
+    },
+];
+
 
 const RoomDetailsPage = ({ navigation }) => {
   return (
@@ -12,22 +23,39 @@ const RoomDetailsPage = ({ navigation }) => {
             </View>
 
             <View  style={{marginTop: 10}}>
-                <Text style={styles.contentText}>
-                  BUILDING:{"\n"}
-                  School of Computing and Information Systems 1{"\n"}  {"\n"}
-                  CAPACITY: {"\n"} 
-                  6 {"\n"} {"\n"}
-                  CO-BOOKER: {"\n"}
-                  1 {"\n"}{"\n"}
-                  STATUS: {"\n"}
-                  Available for booking {"\n"}
-              </Text>
-            </View>
+              {data.map((facility) => {
+                return (
+                  <View>
+                      <View style={styles.textBox}>
+                          <Text style={styles.contentText}>BUILDING:</Text>
+                          <Text style={styles.contentText}>{facility.building}</Text>
+                      </View>
+                      
+                      <View style={styles.textBox}>
+                          <Text style={styles.contentText}>CO-BOOKER:</Text>
+                          <Text style={styles.contentText}>{facility.cobooker}</Text>
+                      </View>
 
-            <View>
-              <Image
-                  style={{width:'100%', resizeMode: "contain"}} 
-                  source={require("../images/LevelLayoutTest.jpg")}/>
+                      <View style={styles.textBox}>
+                          <Text style={styles.contentText}>CAPACITY:</Text>
+                          <Text style={styles.contentText}>{facility.capacity}</Text>
+                      </View>
+
+                      <View style={styles.textBox}>
+                          <Text style={styles.contentText}>STATUS:</Text>
+                          <Text style={styles.contentText}>{facility.status}</Text>
+                      </View>
+
+                      <View>
+                          <Image
+                              style={{width:'97%', resizeMode: "contain", alignSelf:'center'}} 
+                              source={facility.image}/>
+                      </View>
+                  </View>
+
+                  
+                )
+              })}
             </View>
         </LinearGradient>
       
@@ -51,8 +79,12 @@ const styles = StyleSheet.create({
       fontWeight: "medium",
       fontSize: 15,
       paddingHorizontal: 10,
-      paddingVertical: 5,
       color: "white",
       // lineHeight: 25
     },
+
+    textBox: {
+      paddingVertical: 12
+    },
 })
+

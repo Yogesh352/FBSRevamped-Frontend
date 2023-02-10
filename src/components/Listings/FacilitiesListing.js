@@ -1,4 +1,5 @@
 
+import { useNavigation } from '@react-navigation/native';
 import React, {useEffect, useState} from 'react';
 import {
   SafeAreaView,
@@ -23,6 +24,8 @@ const ExpandableComponent = ({item, onClickFunction}) => {
       setLayoutHeight(0);
     }
   }, [item.isExpanded]);
+  
+  const navigation = useNavigation();
 
   return (
     <View style={{width: '100%', flexDirection: 'column', backgroundColor: 'transparent'}}>
@@ -48,7 +51,7 @@ const ExpandableComponent = ({item, onClickFunction}) => {
             style={styles.content}
             // edit to go to new page
             onPress={
-              () => alert('Id: ' + item.id + ' val: ' + item.val)
+              () => navigation.navigate('RoomDetail')
           }>
             <Text style={styles.text}>
               {item.val}
@@ -61,7 +64,7 @@ const ExpandableComponent = ({item, onClickFunction}) => {
   );
 };
 
-const FacilitiesListing = () => {
+const FacilitiesListing = (navigation) => {
   const [listDataSource, setListDataSource] = useState(CONTENT);
   const [multiSelect, setMultiSelect] = useState(false);
 
