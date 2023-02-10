@@ -10,6 +10,7 @@ import HomePage from "../pages/Home";
 import ListingsPage from "../pages/Listings";
 import MapPage from "../pages/Map";
 import Scanning from "../pages/Scanning.js";
+import DetailedMap from "../pages/DetailedMap";
 
 const Stack = createNativeStackNavigator();
 const HomeStack = () => {
@@ -82,6 +83,11 @@ const HomeStack = () => {
           name="Scanning"
           component={ Scanning }
           options={{ headerTitle: "Scan QR Code" }}
+        />
+        <Stack.Screen
+          name="DetailedMap"
+          component={ DetailedMap }
+          options={{ headerTitle: "Focused Map" }}
         />
       </Stack.Group>
 

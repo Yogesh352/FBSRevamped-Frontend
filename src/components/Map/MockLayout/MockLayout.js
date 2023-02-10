@@ -29,7 +29,7 @@ const MockLayout = () => {
                   y={CoordinatesData.rectangle.y}
                   height={CoordinatesData.rectangle.height}
                   width={CoordinatesData.rectangle.width}
-                  stroke="#2349cf"
+                  stroke="#e9e8ea"
                   strokeWidth="0.5"
                   fill={
                     CoordinatesData.rectangle.color
@@ -45,7 +45,7 @@ const MockLayout = () => {
                   y={CoordinatesData.text.y}
                   textAnchor="middle"
                   // fill="#5A5A5A"
-                  fill="#2349cf"
+                  fill="#e9e8ea"
                   fontSize="5"
                   fontWeight="bold"
                   fontFamily="Roboto"
