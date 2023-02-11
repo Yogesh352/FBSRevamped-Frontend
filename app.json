@@ -4,30 +4,34 @@
     "slug": "FBSRevamped-Frontend",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/icon.png",
+    "icon": "./assets/icon.jpg",
     "userInterfaceStyle": "light",
     "splash": {
-      "image": "./assets/splash.png",
+      "image": "./assets/splash.jpg",
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
     "updates": {
       "fallbackToCacheTimeout": 0
     },
-    "assetBundlePatterns": [
-      "**/*"
-    ],
+    "assetBundlePatterns": ["**/*"],
     "ios": {
       "supportsTablet": true
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/adaptive-icon.png",
+        "foregroundImage": "./assets/adaptive-icon.jpg",
         "backgroundColor": "#FFFFFF"
-      }
+      },
+      "package": "com.yogesh3110.FBSRevampedFrontend"
     },
     "web": {
-      "favicon": "./assets/favicon.png"
+      "favicon": "./assets/favicon.jpg"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "d0a1f3e1-35fa-4d79-b96c-e7ebe6ee7dc9"
+      }
     }
   }
 }
