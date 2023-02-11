@@ -283,7 +283,7 @@ const FacilityInformation = ({ navigation }) => {
         >
             <Animatable.View style={styles.container} animation="fadeInUpBig">
                 <Image
-                    source={require("../assets/cafe.png")}
+                    source={require("../assets/cafe.jpg")}
                     style={styles.image}
                 />
                 <Text style={styles.maintext}>{seatName}</Text>

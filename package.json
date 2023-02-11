@@ -35,7 +35,7 @@
     "react-native-dropdown-picker": "^5.4.4",
     "react-native-linear-gradient": "^2.6.2",
     "react-native-modal-datetime-picker": "^14.0.1",
-    "react-native-pager-view": "^6.0.1",
+    "react-native-pager-view": "6.0.1",
     "react-native-paper": "^5.2.0",
     "react-native-paper-dates": "^0.12.0",
     "react-native-reanimated": "~2.12.0",
@@ -54,7 +54,6 @@
     "terminal-link": "^3.0.0",
     "whatwg-url": "^12.0.0",
     "wrap-ansi": "^8.1.0"
-
   },
   "devDependencies": {
     "@babel/core": "^7.12.9",

@@ -6,7 +6,7 @@ export default function InstantBooking() {
         <TouchableOpacity>
             <Card>
                 <Card.Cover 
-                source={require("../../assets/cafe.png")}
+                source={require("../../assets/cafe.jpg")}
                 style={styles.findMeSeatButton}
                 />
             <Text style={styles.findMeASeatText}> Find Me A Seat </Text>
