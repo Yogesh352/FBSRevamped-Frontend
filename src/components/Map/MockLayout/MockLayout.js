@@ -1,9 +1,11 @@
 import React from "react";
 import { View, StyleSheet, TouchableOpacity } from "react-native";
+import { useNavigation } from "@react-navigation/native";
 import floorplanData from "../Data/floorplan-data.json";
 import Svg, { G, Rect, SvgXml, Text, TSpan } from "react-native-svg";
 import { CoordinatesData } from "./CoordinatesData";
 const MockLayout = () => {
+  const navigation = useNavigation();
   return (
     <View
       style={{
@@ -36,6 +38,10 @@ const MockLayout = () => {
                       ? CoordinatesData.rectangle.color
                       : "white"
                   }
+                  onPress={() => {
+                    CoordinatesData.rectangle.color === "#4a5a64" &&
+                      navigation.navigate("DetailedMap");
+                  }}
                 />
               )}
               {CoordinatesData.text && (
