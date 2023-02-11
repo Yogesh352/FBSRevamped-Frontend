@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useCallback, useRef, useState } from "react";
 import { View, StyleSheet, TouchableOpacity } from "react-native";
 import Svg, {
   Circle,
@@ -9,9 +9,10 @@ import Svg, {
   Text,
   TSpan,
 } from "react-native-svg";
+import MapInfoBottomSheet from "../MapInfoBottomSheet";
 
 import { DetailedMapCoordinatesData } from "./DetailedMapCoordinates";
-const DetailedMapLayout = () => {
+const DetailedMapLayout = ({ pressed, setPressed }) => {
   return (
     <View
       style={{
@@ -24,16 +25,18 @@ const DetailedMapLayout = () => {
       <Svg height="100%" width="100%" viewBox="0 25 100 100">
         {DetailedMapCoordinatesData.map((CoordinatesData) => {
           return (
-            <G
-              key={CoordinatesData.rectangle?.x + CoordinatesData.rectangle?.y}
-            >
+            <G>
               {CoordinatesData.circle && (
                 <Circle
+                  key={CoordinatesData.circle.cx + CoordinatesData.circle.cy}
                   stroke="#e9e8ea"
                   strokeWidth="0.5"
                   fill={CoordinatesData.circle.color}
                   cx={CoordinatesData.circle.cx / 2}
                   cy={CoordinatesData.circle.cy / 2}
+                  onPress={() => {
+                    setPressed(true);
+                  }}
                   r={CoordinatesData.circle.radius}
                 />
               )}
@@ -54,6 +57,7 @@ const DetailedMapLayout = () => {
               )}
               {CoordinatesData.ellipse && (
                 <Ellipse
+                  key={CoordinatesData.ellipse.cx + CoordinatesData.ellipse.cy}
                   stroke="#e9e8ea"
                   strokeWidth="0.5"
                   fill={CoordinatesData.ellipse.color}
