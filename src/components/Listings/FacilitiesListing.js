@@ -1,7 +1,7 @@
 
+import { useNavigation } from '@react-navigation/native';
 import React, {useEffect, useState} from 'react';
 import {
-  SafeAreaView,
   LayoutAnimation,
   StyleSheet,
   View,
@@ -23,9 +23,11 @@ const ExpandableComponent = ({item, onClickFunction}) => {
       setLayoutHeight(0);
     }
   }, [item.isExpanded]);
+  
+  const navigation = useNavigation();
 
   return (
-    <View style={{width: '100%', flexDirection: 'column'}}>
+    <View style={{width: '100%', flexDirection: 'column', backgroundColor: '#1a2222', marginTop: 5}}>
       {/*Header of the Expandable List Item*/}
       <TouchableOpacity
         activeOpacity={0.8}
@@ -39,6 +41,7 @@ const ExpandableComponent = ({item, onClickFunction}) => {
         style={{
           height: layoutHeight,
           overflow: 'hidden',
+          marginTop: 5
         }}>
         {/*Content under the header of the Expandable List Item*/}
         {item.subcategory.map((item, key) => (
@@ -47,7 +50,7 @@ const ExpandableComponent = ({item, onClickFunction}) => {
             style={styles.content}
             // edit to go to new page
             onPress={
-              () => alert('Id: ' + item.id + ' val: ' + item.val)
+              () => navigation.navigate('RoomDetail')
           }>
             <Text style={styles.text}>
               {item.val}
@@ -60,7 +63,7 @@ const ExpandableComponent = ({item, onClickFunction}) => {
   );
 };
 
-const FacilitiesListing = () => {
+const FacilitiesListing = (navigation) => {
   const [listDataSource, setListDataSource] = useState(CONTENT);
   const [multiSelect, setMultiSelect] = useState(false);
 
@@ -87,16 +90,17 @@ const FacilitiesListing = () => {
   };
 
   return (
-    <View style={{width: '97%', flex: 1, marginTop: '20%'}}>
+    <View style={{width: '100%', flex: 1, marginTop: '0%', backgroundColor: '#1a2222'}}>
       <View style={styles.container}>
-        <View style={{flexDirection: 'row', padding: 10}}>
-          <Text style={styles.titleText}>Facilities</Text>
+        <View style={{flexDirection: 'row-reverse', padding: 4, backgroundColor: '#1a2222'}}>
           <TouchableOpacity
             onPress={() => setMultiSelect(!multiSelect)}>
             <Text
               style={{
                 textAlign: 'center',
                 justifyContent: 'center',
+                color: 'white',
+                paddingTop: 10
               }}>
               {multiSelect
                 ? 'Single Expand'
@@ -125,23 +129,25 @@ export default FacilitiesListing;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-  },
-  titleText: {
-    flex: 1,
-    fontSize: 22,
-    fontWeight: 'bold',
+    color: '#1a2222',
   },
   header: {
-    backgroundColor: '#B774FF',
-    padding: 20,
+    backgroundColor: '#293637',
+    padding: 10,
+    justifyContent: 'center',
     borderRadius: 5,
     borderWidth: 1,
-    borderColor: 'black',
-    margin: 1
+    borderColor: '#1a2222',
+    margin: 1,
+    height: 60,
   },
   headerText: {
     fontSize: 16,
-    fontWeight: '500',
+    fontWeight: 'medium',
+    textAlign: 'left',
+    paddingLeft: 0,
+    marginLeft: 0,
+    color: 'white'
   },
 //   separator: {
 //     height: 0.5,
@@ -150,19 +156,18 @@ const styles = StyleSheet.create({
 //   },
   text: {
     fontSize: 16,
-    color: '#606070',
+    color: 'white',
     padding: 10,
   },
   content: {
-    paddingLeft: 10,
-    paddingRight: 10,
-    width: '98%',
+    paddingLeft: 5,
+    width: '97%',
     alignSelf: 'center',
     justifyContent: 'center',
-    backgroundColor: '#D2ADFE',
-    borderWidth: 1,
+    backgroundColor: '#293637',
+    borderWidth: 0.5,
     borderBottomWidth: 0,
-    borderColor: 'black',
+    borderColor: '#1a2222'
   },
 });
 

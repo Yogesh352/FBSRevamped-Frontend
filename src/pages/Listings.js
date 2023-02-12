@@ -1,8 +1,6 @@
 import * as React from "react";
-import { Button, Text, View, StyleSheet } from "react-native";
-import { NavigationContainer } from "@react-navigation/native";
+import { View } from "react-native";
 import { createMaterialTopTabNavigator } from "@react-navigation/material-top-tabs";
-import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import FacilitiesListing from '../components/Listings/FacilitiesListing';
 import SeatsListing from "../components/Listings/SeatsListing";
 
@@ -13,26 +11,32 @@ function TopTabs() {
       <Tab.Navigator 
           initialRouteName="FacilitiesListing" 
           screenOptions={{ 
-              activeTintColor: "#e91e63", 
-              labelStyle: {fontSize:12}, 
-              style: {backgroundColor: 'white'}}}>
+              tabBarIndicatorStyle: {backgroundColor: '#94c0db', height: 5},
+              tabBarStyle: {backgroundColor: '#1a2222'},
+          }}>
       <Tab.Screen
           name="FacilitiesListing"
           component={FacilitiesListing}
-          options={{tabBarLabel: "Facilities"}}
+          options={{
+            tabBarLabel: "Facilities",
+            tabBarLabelStyle: {color: 'white'}
+          }}
       />
       <Tab.Screen
           name="SeatsListing"
           component={SeatsListing}
-          options={{tabBarLabel: "Seats"}}
+          options={{
+            tabBarLabel: "Seats", 
+            tabBarLabelStyle: {color: 'white'}
+          }}
       />
       </Tab.Navigator>
   );
 }
 
-const ListingsPage = ({ navigation }) => {
+const ListingsPage = () => {
   return (
-    <View style={{ padding: 10, flex: 1, justifyContent: "space-evenly" }}>
+    <View style={{ flex: 1, justifyContent: "space-evenly" }}>
       <TopTabs/>
     </View>
   );
