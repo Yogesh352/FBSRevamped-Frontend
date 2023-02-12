@@ -1,17 +1,20 @@
 import { Button, Text, View, StyleSheet } from "react-native";
 import React, { useState, useEffect } from "react";
 import { BarCodeScanner } from "expo-barcode-scanner";
-// import { LinearGradient } from "expo-linear-gradient";
-// import * as Animatable from "react-native-animatable";
-// import { Icon } from "@iconify/react";
-// import Icon from "react-native-vector-icons/FontAwesome";
 import BarcodeMask from "react-native-barcode-mask";
-import QrCodeMask from "react-native-qrcode-mask";
+import { useIsFocused } from "@react-navigation/native";
+
+//npm install react-native-camera --save
+//npm install react-native-qrcode-scanner --save
+//npm install react-native-permissions --save
+// import QRCodeScanner from 'react-native-qrcode-scanner';
+
 // expo start --tunnel
 const Scanning = ({ navigation }) => {
     const [hasPermission, setHasPermission] = useState(null);
     const [scanned, setScanned] = useState(false);
     const [text, setText] = useState("Not yet scanned");
+    const isFocused = useIsFocused();
 
     const askForCamerPermission = () => {
         (async () => {
@@ -53,25 +56,26 @@ const Scanning = ({ navigation }) => {
                 </View> */}
 
             <View style={styles.barcodebox}>
-                <BarCodeScanner
-                    onBarCodeScanned={scanned ? undefined : handleQRCodescanned}
-                    style={styles.barcodescanner}
-                >
-                    <BarcodeMask
-                        edgeColor={"lightgrey"}
-                        showAnimatedLine={true}
-                        // edgeRadius={15}
-                        outerMaskOpacity={0.1}
-                        edgeBorderWidth={3}
-                        height={300}
-                        width={300}
-                        // edgeHeight={25}
-                        // edgeWidth={25}
-                        lineAnimationDuration={1000}
-                        style={styles.mask}
-                    ></BarcodeMask>
+                {isFocused && (
+                    <BarCodeScanner
+                        onBarCodeScanned={handleQRCodescanned}
+                        style={styles.barcodescanner}
+                    >
+                        <BarcodeMask
+                            edgeColor={"lightgrey"}
+                            showAnimatedLine={true}
+                            // edgeRadius={15}
+                            outerMaskOpacity={0.1}
+                            edgeBorderWidth={3}
+                            height={300}
+                            width={300}
+                            // edgeHeight={25}
+                            // edgeWidth={25}
+                            lineAnimationDuration={1000}
+                            style={styles.mask}
+                        ></BarcodeMask>
 
-                    {/* <QrCodeMask
+                        {/* <QrCodeMask
                         showLineAnimated={true}
                         lineDirection="vertical"
                         height={300}
@@ -85,7 +89,8 @@ const Scanning = ({ navigation }) => {
                         // topTitle="Bar Code Scanner"
                         // bottomTitle="Put the barcode into the box"
                     /> */}
-                </BarCodeScanner>
+                    </BarCodeScanner>
+                )}
             </View>
             {/* <Text styles={styles.maintext}>{text}</Text> */}
         </View>
