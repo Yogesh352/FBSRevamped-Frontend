@@ -12,6 +12,7 @@ import { LinearGradient } from "expo-linear-gradient";
 import DateTimePickerModal from "react-native-modal-datetime-picker";
 import * as Animatable from "react-native-animatable";
 import DropDownPicker from "react-native-dropdown-picker";
+import { color } from "react-native-reanimated";
 // import { Card, Text, Button } from "react-native-paper";
 // import { TimePickerModal } from "react-native-paper-dates";
 // import "intl"; //npm install intl
@@ -57,6 +58,7 @@ const FacilityInformation = ({ navigation }) => {
 
     // ************seat Dscription start****************
     const [isOwner, setIsOwner] = useState(true); //change this to false to activate the not owner screen
+    // if isBooked is true, option is to report, if false, user can book the seat
     const [isBooked, setIsBooked] = useState(false);
     const [ownerEmail, setownerEmail] = useState("jerry.2021@scis.smu.edu.sg");
 
@@ -70,7 +72,7 @@ const FacilityInformation = ({ navigation }) => {
         } else if (isBooked === true) {
             return (
                 <Text style={styles.secondarytext}>
-                    This Seat has been booked by{" "}
+                    This Seat has been booked by
                     <Text
                         style={{
                             fontWeight: "bold",
@@ -92,7 +94,6 @@ const FacilityInformation = ({ navigation }) => {
     // ************seat Description end****************
 
     // ************Description start****************
-    // if isBooked is true, option is to report, if false, user can book the seat
 
     const [open, setOpen] = useState(false);
     var [value, setValue] = useState([]);
@@ -177,7 +178,7 @@ const FacilityInformation = ({ navigation }) => {
                     </View>
                     <View style={styles.submitcontainer}>
                         <TouchableOpacity style={styles.submitButton}>
-                            <Text>Submit</Text>
+                            <Text style={{ padding: 10 }}>Submit</Text>
                         </TouchableOpacity>
                     </View>
                 </>
@@ -256,7 +257,14 @@ const FacilityInformation = ({ navigation }) => {
                                     <TouchableOpacity
                                         style={styles.submitButton}
                                     >
-                                        <Text>Submit</Text>
+                                        <Text
+                                            style={{
+                                                padding: 10,
+                                                color: "lightgrey",
+                                            }}
+                                        >
+                                            Submit
+                                        </Text>
                                     </TouchableOpacity>
                                 </View>
                             </View>
@@ -267,8 +275,12 @@ const FacilityInformation = ({ navigation }) => {
         } else {
             return (
                 <>
-                    <View>
-                        <Text>Book Now</Text>
+                    <View style={styles.booknowcontainer}>
+                        <TouchableOpacity style={styles.submitButton}>
+                            <Text style={{ padding: 10, color: "lightgrey" }}>
+                                Book Now
+                            </Text>
+                        </TouchableOpacity>
                     </View>
                 </>
             );
@@ -277,10 +289,7 @@ const FacilityInformation = ({ navigation }) => {
     // ************Description end****************
 
     return (
-        <LinearGradient
-            style={{ height: "100%" }}
-            colors={["#2349cf", "#B79fe9"]}
-        >
+        <View style={styles.content}>
             <Animatable.View style={styles.container} animation="fadeInUpBig">
                 <Image
                     source={require("../assets/cafe.jpg")}
@@ -299,10 +308,15 @@ const FacilityInformation = ({ navigation }) => {
                     <Details />
                 </View>
             </Animatable.View>
-        </LinearGradient>
+        </View>
     );
 };
 const styles = StyleSheet.create({
+    content: {
+        // paddingHorizontal: 20,
+        backgroundColor: "#1a2222",
+        height: "100%",
+    },
     container: {
         // backgroundColor: 'red',
         display: "flex",
@@ -342,6 +356,7 @@ const styles = StyleSheet.create({
     },
     secondarytext: {
         fontSize: 17,
+        // paddingLeft:10,
     },
     timecontainer: {
         // backgroundColor:'red',
@@ -350,6 +365,7 @@ const styles = StyleSheet.create({
         margin: 10,
         // flex: 'row'
         alignItems: "baseline",
+        // width:40,
         // justifyContent: 'center',
     },
     timer: {
@@ -369,7 +385,7 @@ const styles = StyleSheet.create({
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
-        // width: 30
+        // width: 100
     },
     timetext: {
         marginLeft: 15,
@@ -404,6 +420,12 @@ const styles = StyleSheet.create({
         display: "flex",
         // justifyContent:'flex-end',
         alignItems: "flex-end",
+        margin: 20,
+    },
+    booknowcontainer: {
+        display: "flex",
+        // justifyContent:'flex-end',
+        alignItems: "center",
         margin: 20,
     },
     submitButton: {
