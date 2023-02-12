@@ -2,7 +2,6 @@
 import { useNavigation } from '@react-navigation/native';
 import React, {useEffect, useState} from 'react';
 import {
-  SafeAreaView,
   LayoutAnimation,
   StyleSheet,
   View,
@@ -28,7 +27,7 @@ const ExpandableComponent = ({item, onClickFunction}) => {
   const navigation = useNavigation();
 
   return (
-    <View style={{width: '100%', flexDirection: 'column', backgroundColor: 'transparent'}}>
+    <View style={{width: '100%', flexDirection: 'column', backgroundColor: '#1a2222', marginTop: 5}}>
       {/*Header of the Expandable List Item*/}
       <TouchableOpacity
         activeOpacity={0.8}
@@ -91,16 +90,17 @@ const FacilitiesListing = (navigation) => {
   };
 
   return (
-    <View style={{width: '100%', flex: 1, marginTop: '0%', backgroundColor: 'transparent'}}>
+    <View style={{width: '100%', flex: 1, marginTop: '0%', backgroundColor: '#1a2222'}}>
       <View style={styles.container}>
-        <View style={{flexDirection: 'row-reverse', padding: 4}}>
-          {/* <Text style={styles.titleText}>Facilities</Text> */}
+        <View style={{flexDirection: 'row-reverse', padding: 4, backgroundColor: '#1a2222'}}>
           <TouchableOpacity
             onPress={() => setMultiSelect(!multiSelect)}>
             <Text
               style={{
                 textAlign: 'center',
                 justifyContent: 'center',
+                color: 'white',
+                paddingTop: 10
               }}>
               {multiSelect
                 ? 'Single Expand'
@@ -129,20 +129,15 @@ export default FacilitiesListing;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    color: 'transparent',
-  },
-  titleText: {
-    flex: 1,
-    fontSize: 22,
-    fontWeight: 'bold',
+    color: '#1a2222',
   },
   header: {
-    backgroundColor: 'white',
+    backgroundColor: '#293637',
     padding: 10,
     justifyContent: 'center',
     borderRadius: 5,
     borderWidth: 1,
-    borderColor: 'black',
+    borderColor: '#1a2222',
     margin: 1,
     height: 60,
   },
@@ -151,7 +146,8 @@ const styles = StyleSheet.create({
     fontWeight: 'medium',
     textAlign: 'left',
     paddingLeft: 0,
-    marginLeft: 0
+    marginLeft: 0,
+    color: 'white'
   },
 //   separator: {
 //     height: 0.5,
@@ -160,7 +156,7 @@ const styles = StyleSheet.create({
 //   },
   text: {
     fontSize: 16,
-    color: '#606070',
+    color: 'white',
     padding: 10,
   },
   content: {
@@ -168,10 +164,10 @@ const styles = StyleSheet.create({
     width: '97%',
     alignSelf: 'center',
     justifyContent: 'center',
-    backgroundColor: '#E7E7E7',
+    backgroundColor: '#293637',
     borderWidth: 0.5,
     borderBottomWidth: 0,
-    borderColor: 'black',
+    borderColor: '#1a2222'
   },
 });
 
