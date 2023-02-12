@@ -51,7 +51,7 @@ function LocationDropdown(props) {
         <View>
             <View>
                 <View style={{
-                    backgroundColor: '#FFFFFF',
+                    backgroundColor: '#1a2222',
                     alignItems: 'center',
                     justifyContent: 'center',
                     paddingLeft: 2,
@@ -64,13 +64,13 @@ function LocationDropdown(props) {
                         flexDirection: 'row'
                         }}>
                             <View style={{flex: 3}}>
-                                <Text>Location</Text>
+                                <Text style={styles.plainText}>Location</Text>
                             </View>
                             <View style={{flex: 1}}>
                                 <TouchableOpacity 
                                     onPress={reset} 
                                     activeOpacity={0}>
-                                        <Text style={{textAlign: 'right'}}>Reset</Text>
+                                        <Text style={styles.reset}>Reset</Text>
                                 </TouchableOpacity>
                             </View>
                     </View>
@@ -91,11 +91,12 @@ function LocationDropdown(props) {
                             }
 
                 
-                        theme="LIGHT"
+                        theme="DARK"
                         multiple={true}
                         mode="BADGE"
                         showBadgeDot={false}
                         listMode="SCROLLVIEW"
+                        style={styles.dropdown}
                     />
                 </View>
 
@@ -104,5 +105,22 @@ function LocationDropdown(props) {
         
       );
 }
+
+const styles = StyleSheet.create({
+    reset: {
+        color: '#657384',
+        textAlign: 'right',
+        fontSize: 15
+    },
+    plainText: {
+        fontWeight: "bold",
+        fontSize: 16,
+        color: "#94c0db",
+        paddingLeft: 2
+    },
+    dropdown: {
+        backgroundColor: '#293637'
+    }
+})
 
 export default LocationDropdown;

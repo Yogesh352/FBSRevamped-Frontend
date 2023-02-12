@@ -51,12 +51,13 @@ function FacilityTypeDropdown(props) {
         <View>
             <View>
                 <View style={{
-                    backgroundColor: '#FFFFFF',
+                    backgroundColor: '#1a2222',
                     alignItems: 'center',
                     justifyContent: 'center',
                     paddingHorizontal: 1,
                     paddingLeft: 2,
                     maxWidth: '97%',
+                    marginBottom: 20,
                     zIndex: 2
                     }}>
                     <View style={{
@@ -65,13 +66,13 @@ function FacilityTypeDropdown(props) {
                         flexDirection: 'row'
                         }}>
                             <View style={{flex: 3}}>
-                                <Text>Facility Type</Text>
+                                <Text style={styles.plainText}>Facility Type</Text>
                             </View>
                             <View style={{flex: 1}}>
                                 <TouchableOpacity 
                                     onPress={reset} 
                                     activeOpacity={0}>
-                                        <Text style={{textAlign: 'right'}}>Reset</Text>
+                                        <Text style={styles.reset}>Reset</Text>
                                 </TouchableOpacity>
                             </View>
                     </View>
@@ -92,11 +93,12 @@ function FacilityTypeDropdown(props) {
                             }
 
                 
-                        theme="LIGHT"
+                        theme="DARK"
                         multiple={true}
                         mode="BADGE"
                         showBadgeDot={false}
                         listMode="SCROLLVIEW"
+                        style={styles.dropdown}
                     />
                 </View>
 
@@ -105,5 +107,22 @@ function FacilityTypeDropdown(props) {
         
       );
 }
+
+const styles = StyleSheet.create({
+    reset: {
+        color: '#657384',
+        textAlign: 'right',
+        fontSize: 15
+    },
+    plainText: {
+        fontWeight: "bold",
+        fontSize: 16,
+        color: "#94c0db",
+        paddingLeft: 2
+    },
+    dropdown: {
+        backgroundColor: '#293637'
+    }
+})
 
 export default FacilityTypeDropdown;
