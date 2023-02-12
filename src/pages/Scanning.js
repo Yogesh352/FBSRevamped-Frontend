@@ -1,10 +1,12 @@
 import { Button, Text, View, StyleSheet } from "react-native";
 import React, { useState, useEffect } from "react";
 import { BarCodeScanner } from "expo-barcode-scanner";
-import { LinearGradient } from "expo-linear-gradient";
+// import { LinearGradient } from "expo-linear-gradient";
+// import * as Animatable from "react-native-animatable";
 // import { Icon } from "@iconify/react";
-import Icon from "react-native-vector-icons/FontAwesome";
-
+// import Icon from "react-native-vector-icons/FontAwesome";
+import BarcodeMask from "react-native-barcode-mask";
+import QrCodeMask from "react-native-qrcode-mask";
 // expo start --tunnel
 const Scanning = ({ navigation }) => {
     const [hasPermission, setHasPermission] = useState(null);
@@ -45,26 +47,48 @@ const Scanning = ({ navigation }) => {
     }
 
     return (
-        <LinearGradient
-            style={{ height: "100%" }}
-            colors={["#2349cf", "#B79fe9"]}
-        >
-            <View style={styles.container}>
-                {/* <View style={styles.instruction}>
+        <View style={styles.container}>
+            {/* <View style={styles.instruction}>
                     <Text style={styles.maintext}>Scan QR code below:</Text>
                 </View> */}
 
-                <View style={styles.barcodebox}>
-                    <BarCodeScanner
-                        onBarCodeScanned={
-                            scanned ? undefined : handleQRCodescanned
-                        }
-                        style={styles.barcodescanner}
-                    ></BarCodeScanner>
-                </View>
-                {/* <Text styles={styles.maintext}>{text}</Text> */}
+            <View style={styles.barcodebox}>
+                <BarCodeScanner
+                    onBarCodeScanned={scanned ? undefined : handleQRCodescanned}
+                    style={styles.barcodescanner}
+                >
+                    <BarcodeMask
+                        edgeColor={"lightgrey"}
+                        showAnimatedLine={true}
+                        // edgeRadius={15}
+                        outerMaskOpacity={0.1}
+                        edgeBorderWidth={3}
+                        height={300}
+                        width={300}
+                        // edgeHeight={25}
+                        // edgeWidth={25}
+                        lineAnimationDuration={1000}
+                        style={styles.mask}
+                    ></BarcodeMask>
+
+                    {/* <QrCodeMask
+                        showLineAnimated={true}
+                        lineDirection="vertical"
+                        height={300}
+                        width={300}
+                        edgeColor="light-grey"
+                        overlayOpacity={0.1}
+                        // lineBorderRadius = {100}
+                        lineThick={3}
+                        lineColor="light-grey"
+                        edgeBorderWidth={3}
+                        // topTitle="Bar Code Scanner"
+                        // bottomTitle="Put the barcode into the box"
+                    /> */}
+                </BarCodeScanner>
             </View>
-        </LinearGradient>
+            {/* <Text styles={styles.maintext}>{text}</Text> */}
+        </View>
     );
 };
 
@@ -77,6 +101,7 @@ const styles = StyleSheet.create({
         // justifyContent: "center",
         alignItems: "center",
         // backgroundColor: "tomato",
+        backgroundColor: "#1a2222",
     },
     instruction: {
         // flex:1,
@@ -86,23 +111,27 @@ const styles = StyleSheet.create({
     maintext: {
         fontSize: 20,
         fontWeight: "bold",
-        color: 'white',
+        color: "white",
     },
     barcodebox: {
         // flex: 1,
         backgroundColor: "#fff",
         alignItems: "center",
         justifyContent: "center",
-        height: "70%",
+        height: "50%",
         width: "90%",
         overflow: "hidden",
-        borderRadius: 30,
-
+        borderRadius: 20,
+        marginTop: 150,
         // backgroudColor: 'tomato'
     },
     barcodescanner: {
-        height: 1000,
+        height: 500,
         width: 500,
+    },
+    mask: {
+        padding: 10,
+        margin: 10,
     },
 });
 
