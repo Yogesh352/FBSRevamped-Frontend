@@ -9,6 +9,7 @@ import FilterPage from "../pages/Filter";
 import HomePage from "../pages/Home";
 import ListingsPage from "../pages/Listings";
 import MapPage from "../pages/Map";
+import RoomDetails from "../pages/RoomDetail";
 
 import ScanningPage from "../pages/Scanning";
 
@@ -89,6 +90,10 @@ const HomeStack = () => {
           name="DetailedMap"
           component={DetailedMap}
           options={{ headerTitle: "Focused View" }}
+        />
+        <Stack.Screen
+          name="RoomDetail"
+          component={RoomDetails}
         />
       </Stack.Group>
     </Stack.Navigator>
