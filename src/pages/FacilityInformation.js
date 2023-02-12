@@ -59,7 +59,7 @@ const FacilityInformation = ({ navigation }) => {
     // ************seat Dscription start****************
     const [isOwner, setIsOwner] = useState(true); //change this to false to activate the not owner screen
     // if isBooked is true, option is to report, if false, user can book the seat
-    const [isBooked, setIsBooked] = useState(false);
+    const [isBooked, setIsBooked] = useState(true);
     const [ownerEmail, setownerEmail] = useState("jerry.2021@scis.smu.edu.sg");
 
     const SeatDescription = () => {
@@ -71,17 +71,20 @@ const FacilityInformation = ({ navigation }) => {
             );
         } else if (isBooked === true) {
             return (
-                <Text style={styles.secondarytext}>
-                    This Seat has been booked by
+                <>
+                    <Text style={styles.secondarytext}>
+                        This Seat has been booked by
+                    </Text>
                     <Text
                         style={{
                             fontWeight: "bold",
                             textDecorationLine: "underline",
+                            color: "white",
                         }}
                     >
                         {ownerEmail}
                     </Text>
-                </Text>
+                </>
             );
         } else {
             return (
@@ -172,8 +175,9 @@ const FacilityInformation = ({ navigation }) => {
                         <Text style={styles.secondarytext}>Reason:</Text>
                         <TextInput
                             placeholder="Your reason"
+                            placeholderTextColor="white"
                             style={styles.textbox}
-                            onChangeText={(val) => reasonInputChange(val)}
+                            onEndEditing={(val) => reasonInputChange(val)}
                         ></TextInput>
                     </View>
                     <View style={styles.submitcontainer}>
@@ -202,7 +206,7 @@ const FacilityInformation = ({ navigation }) => {
                         <View>
                             <View
                                 style={{
-                                    backgroundColor: "#FFFFFF",
+                                    backgroundColor: "#293637",
                                     alignItems: "center",
                                     justifyContent: "center",
                                     paddingHorizontal: 10,
@@ -247,11 +251,12 @@ const FacilityInformation = ({ navigation }) => {
                                     onOpen={setSelctedItems}
                                     placeholder="Select:"
                                     onSelectItem={addItem}
-                                    theme="LIGHT"
+                                    theme="DARK"
                                     multiple={true}
                                     mode="BADGE"
                                     showBadgeDot={false}
                                     listMode="SCROLLVIEW"
+                                    style={styles.dropdown}
                                 />
                                 <View style={styles.submitcontainer}>
                                     <TouchableOpacity
@@ -334,10 +339,10 @@ const styles = StyleSheet.create({
         marginHorizontal: 10,
         marginBottom: 10,
         borderRadius: 10,
-        backgroundColor: "white",
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
+        backgroundColor: "#293637",
     },
     bottomcontainer: {
         // flex: 19
@@ -346,7 +351,7 @@ const styles = StyleSheet.create({
         marginHorizontal: 10,
         marginBottom: 10,
         borderRadius: 10,
-        backgroundColor: "white",
+        backgroundColor: "#293637",
         // flexDirection: "row",
     },
     maintext: {
@@ -356,6 +361,7 @@ const styles = StyleSheet.create({
     },
     secondarytext: {
         fontSize: 17,
+        color: "white",
         // paddingLeft:10,
     },
     timecontainer: {
@@ -365,6 +371,7 @@ const styles = StyleSheet.create({
         margin: 10,
         // flex: 'row'
         alignItems: "baseline",
+
         // width:40,
         // justifyContent: 'center',
     },
@@ -372,6 +379,7 @@ const styles = StyleSheet.create({
         width: "30%",
         outlineColor: "red",
         backgroundColor: "#e7622e",
+
         // display:'flex',
         // justifyContent:'flex-start',
     },
@@ -390,6 +398,7 @@ const styles = StyleSheet.create({
     timetext: {
         marginLeft: 15,
         marginRight: 15,
+        color: "white",
     },
     reasoncontainer: {
         // backgroundColor:'red',
@@ -415,6 +424,7 @@ const styles = StyleSheet.create({
         // justifyContent: "baseline",
         // alignItems: "baseline",
         textAlignVertical: "top",
+        color: "white",
     },
     submitcontainer: {
         display: "flex",
@@ -440,5 +450,8 @@ const styles = StyleSheet.create({
         justifyContent: "center",
         width: 100,
     },
+    // dropdown: {
+    //     backgroundColor: "#86839C",
+    // },
 });
 export default FacilityInformation;
