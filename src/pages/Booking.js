@@ -33,8 +33,7 @@ const ModalPopup = ({ visible, children }) => {
 };
 
 const DateButton = ({ first, second, third }) => {
-  const [open, setOpen] = useState(false);
-  const [time, setTime] = useState();
+
   const [visible, setVisible] = useState(false);
 
   return (
@@ -57,9 +56,9 @@ const DateButton = ({ first, second, third }) => {
           />
          
         </View>
-        <Text style={{ marginVertical: 30, fontSize: 20, textAlign: "center" }}>
+        <Text style={{ marginVertical: 30, fontSize: 20, textAlign: "center", fontWeight: "bold" }}>
           {" "}
-          Button is clicked{" "}
+          Time slot successfully added{" "}
         </Text>
       </ModalPopup>
 
@@ -132,7 +131,7 @@ const BookingPage = ({ navigation }) => {
       >
         <TouchableOpacity
           style={styles.confirmContainer}
-          // onPress={() => navigation.navigate("ConfirmationPage")}
+          onPress={() => navigation.navigate("Confirmation")}
         >
           <Text style={styles.buttonText}>Confirm Booking</Text>
         </TouchableOpacity>
