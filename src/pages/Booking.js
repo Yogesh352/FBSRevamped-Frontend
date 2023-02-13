@@ -32,7 +32,7 @@ const ModalPopup = ({ visible, children }) => {
   );
 };
 
-const DateButton = ({ first, second, third }) => {
+const TimeButton = ({ first, second, third }) => {
 
   const [visible, setVisible] = useState(false);
 
@@ -56,7 +56,7 @@ const DateButton = ({ first, second, third }) => {
           />
          
         </View>
-        <Text style={{ marginVertical: 30, fontSize: 20, textAlign: "center", fontWeight: "bold" }}>
+        <Text style={styles.successText}>
           {" "}
           Time slot successfully added!{" "}
         </Text>
@@ -104,26 +104,26 @@ const BookingPage = ({ navigation }) => {
       />
       <Text style={styles.titleText}>Available Booking Slots</Text>
       <View style={{ marginTop: -20 }}>
-        <DateButton
+        <TimeButton
           first={"8.00AM"}
           second={"9.00AM"}
           third={"10.00AM"}
-        ></DateButton>
-        <DateButton
+        ></TimeButton>
+        <TimeButton
           first={"11.00AM"}
           second={"12.00PM"}
           third={"1.00PM"}
-        ></DateButton>
-        <DateButton
+        ></TimeButton>
+        <TimeButton
           first={"2.00PM"}
           second={"3.00PM"}
           third={"4.00PM"}
-        ></DateButton>
-        <DateButton
+        ></TimeButton>
+        <TimeButton
           first={"5.00PM"}
           second={"6.00PM"}
           third={"7.00PM"}
-        ></DateButton>
+        ></TimeButton>
       </View>
 
       <View
@@ -205,7 +205,7 @@ const styles = StyleSheet.create({
   },
   modalContainer: {
     width: "80%",
-    backgroundColor: "white",
+    backgroundColor: "#293637",
     paddingHorizontal: 20,
     paddingVertical: 30,
     borderRadius: 20,
@@ -217,4 +217,11 @@ const styles = StyleSheet.create({
     alignItems: "flex-end",
     justifyContent: "center",
   },
+  successText: { 
+    marginVertical: 30,
+    fontSize: 20,
+    textAlign: "center",
+    fontWeight: "bold",
+    color: "white"}
+  
 });
