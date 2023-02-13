@@ -9,4 +9,4 @@ const Confirmation = ({ navigation }) => {
 };
 
 
-export default FilterPage;
+export default Confirmation;

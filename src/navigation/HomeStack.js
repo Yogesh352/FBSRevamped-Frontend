@@ -9,6 +9,7 @@ import FilterPage from "../pages/Filter";
 import HomePage from "../pages/Home";
 import ListingsPage from "../pages/Listings";
 import MapPage from "../pages/Map";
+import ConfirmationPage from  "../pages/Confirmation";
 
 const Stack = createNativeStackNavigator();
 const HomeStack = () => {
@@ -51,6 +52,11 @@ const HomeStack = () => {
           options={{ headerTitle: "Bookings" }}
           name="Bookings"
           component={BookingPage}
+        />
+        <Stack.Screen
+          options={{ headerTitle: "Confirmation" }}
+          name="Confirmation"
+          component={ConfirmationPage}
         />
         <Stack.Screen
           options={{ headerTitle: "Listings" }}

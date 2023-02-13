@@ -58,7 +58,7 @@ const DateButton = ({ first, second, third }) => {
         </View>
         <Text style={{ marginVertical: 30, fontSize: 20, textAlign: "center", fontWeight: "bold" }}>
           {" "}
-          Time slot successfully added{" "}
+          Time slot successfully added!{" "}
         </Text>
       </ModalPopup>
 
