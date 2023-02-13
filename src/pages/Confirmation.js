@@ -70,7 +70,8 @@ const Confirmation = ({ navigation }) => {
           <Text style={styles.confirmText}>Booking is Confirmed!</Text>
 
           <View>
-            <TouchableOpacity onPress={() => isClicked(false)}>
+            <TouchableOpacity onPress={() => {isClicked(false);
+            navigation.navigate("Booking")}}>
               <Text style={styles.homeButton}>Return to Home</Text>
             </TouchableOpacity>
           </View>
