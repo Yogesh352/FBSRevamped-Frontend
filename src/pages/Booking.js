@@ -43,8 +43,8 @@ const TimeButton = ({ first, second, third }) => {
           <View style={styles.header}>
             <TouchableOpacity onPress={()=> setVisible(false)}>
               <Image
-                source={require("../images/x.jpg")}
-                style={{ height: 30, width: 30 }}
+                source={require("../images/x.png")}
+                style={{ height: 20, width: 20 }}
               />
             </TouchableOpacity>
           </View>
