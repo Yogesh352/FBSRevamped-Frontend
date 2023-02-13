@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import {
   Modal,
   Text,
@@ -10,6 +10,7 @@ import {
 
 const ModalPopup = ({ visible, children }) => {
   const [showModal, setShowModal] = useState(visible);
+
   useEffect(() => {
     toggleModal();
   }, [visible]);
@@ -17,6 +18,7 @@ const ModalPopup = ({ visible, children }) => {
   const toggleModal = () => {
     if (visible) {
       setShowModal(true);
+   
     } else {
       setShowModal(false);
     }
@@ -40,7 +42,7 @@ const DateButton = ({ first, second, third }) => {
       <ModalPopup visible={visible}>
         <View style={{ alignItems: "center" }}>
           <View style={styles.header}>
-            <TouchableOpacity>
+            <TouchableOpacity onPress={()=> setVisible(false)}>
               <Image
                 source={require("../images/x.jpg")}
                 style={{ height: 30, width: 30 }}
@@ -49,8 +51,11 @@ const DateButton = ({ first, second, third }) => {
           </View>
         </View>
         <View style={{ alignItems: "center" }}>
-          source = {require("../images/tick.jpg")}
-          style = {{ height: 150, width: 150, marginVertical: 10 }}
+          <Image
+           source = {require("../images/tick.png")}
+           style = {{ height: 150, width: 150, marginVertical: 10 }}
+          />
+         
         </View>
         <Text style={{ marginVertical: 30, fontSize: 20, textAlign: "center" }}>
           {" "}
@@ -61,33 +66,27 @@ const DateButton = ({ first, second, third }) => {
       <View style={styles.space} />
       <TouchableOpacity
         style={styles.buttonContainer}
-        onPress={(first) => {
-          // setTime({first});
-          setOpen(true);
+        onPress={() => {
+          setVisible(true);
         }}
       >
         <Text style={styles.buttonText}>{first}</Text>
       </TouchableOpacity>
 
-      {/* <Modal visible={open}>        
-          <Text style={styles.modalHeader}>{first} time-slot selected</Text>
-          <View style= {styles.modalContainer}>
-          <TouchableOpacity
-            style={styles.modalContainer}
-            onPress={() => setOpen(false)}
-          >
-            <Text style={styles.buttonText}>Close</Text>
-          </TouchableOpacity>  
-          </View>  
-      </Modal> */}
 
       <View style={styles.space} />
-      <TouchableOpacity style={styles.buttonContainer}>
+      <TouchableOpacity style={styles.buttonContainer}
+      onPress={() => {
+        setVisible(true);
+      }}>
         <Text style={styles.buttonText}>{second}</Text>
       </TouchableOpacity>
 
       <View style={styles.space} />
-      <TouchableOpacity style={styles.buttonContainer}>
+      <TouchableOpacity style={styles.buttonContainer}
+      onPress={() => {
+        setVisible(true);
+      }}>
         <Text style={styles.buttonText}>{third}</Text>
       </TouchableOpacity>
       <View style={styles.space} />
@@ -159,7 +158,7 @@ const styles = StyleSheet.create({
   },
   buttonText: {
     fontSize: 15,
-    color: "#000000",
+    color: "#fff",
     fontWeight: "bold",
     alignSelf: "center",
     textTransform: "uppercase",
