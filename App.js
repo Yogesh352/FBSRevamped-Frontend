@@ -46,7 +46,7 @@ const App = () => {
               borderTopLeftRadius: 10,
               borderTopRightRadius: 10,
               borderColor: "transparent",
-              backgroundColor: "#081113"
+              backgroundColor: "#081113",
             },
           })}
         >
@@ -61,18 +61,17 @@ const App = () => {
             name="Booking"
             component={BookingPage}
             options={{
-              headerTitle: "FBS",
-              headerTitleStyle: {
-                fontWeight: "bold",
-                color: "white",
-                fontSize: 25,
+              headerStyle: {
+                backgroundColor: "#1a2222",
+                height: 80,
               },
-              headerBackground: () => (
-                <LinearGradient
-                  colors={["#879fe9", "#2349c2"]}
-                  style={[StyleSheet.absoluteFill]}
-                />
-              ),
+              headerTintColor: "#ffffff",
+              headerShadowVisible: false,
+              headerTitleAlign: "center",
+              headerTitle: "Booking",
+              headerTitleStyle: {
+                color: "white",
+              },
             }}
           />
           <Tab.Screen
@@ -80,18 +79,17 @@ const App = () => {
             component={ScanningPage}
             options={{
               headerStyle: {
-                backgroundColor: "#2349cf",
+                backgroundColor: "#1a2222",
                 height: 80,
               },
+              headerTintColor: "#ffffff",
               headerShadowVisible: false,
               headerTitleAlign: "center",
               headerTitle: "Scanning",
-              
               headerTitleStyle: {
                 color: "white",
               },
-            
-              
+
               tabBarButton: (props) => (
                 <TouchableOpacity
                   style={{
@@ -129,37 +127,35 @@ const App = () => {
           />
           <Tab.Screen
             options={{
-              headerTitle: "FBS",
-              headerTitleStyle: {
-                fontWeight: "bold",
-                color: "white",
-                fontSize: 25,
+              headerStyle: {
+                backgroundColor: "#1a2222",
+                height: 80,
               },
-              headerBackground: () => (
-                <LinearGradient
-                  colors={["#879fe9", "#2349c2"]}
-                  style={[StyleSheet.absoluteFill]}
-                />
-              ),
-              
+              headerTintColor: "#ffffff",
+              headerShadowVisible: false,
+              headerTitleAlign: "center",
+              headerTitle: "Favourites",
+              headerTintColor: "#ffffff",
+              headerTitleStyle: {
+                color: "white",
+              },
             }}
             name="Favourites"
             component={FavouritesPage}
           />
           <Tab.Screen
             options={{
-              headerTitle: "FBS",
-              headerTitleStyle: {
-                fontWeight: "bold",
-                color: "white",
-                fontSize: 25,
+              headerStyle: {
+                backgroundColor: "#1a2222",
+                height: 80,
               },
-              headerBackground: () => (
-                <LinearGradient
-                  colors={["#879fe9", "#2349c2"]}
-                  style={[StyleSheet.absoluteFill]}
-                />
-              ),
+              headerTintColor: "#ffffff",
+              headerShadowVisible: false,
+              headerTitleAlign: "center",
+              headerTitle: "Profile",
+              headerTitleStyle: {
+                color: "white",
+              },
             }}
             name="Profile"
             component={ProfilePage}
@@ -183,7 +179,6 @@ const styles = StyleSheet.create({
     shadowColor: "#000",
     elevation: 25,
   },
-
 });
 // import { View, Text } from 'react-native'
 // import React from 'react'
