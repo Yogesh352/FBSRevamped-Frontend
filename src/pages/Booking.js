@@ -63,6 +63,7 @@ const TimeButton = ({ first, second, third }) => {
       </ModalPopup>
 
       <View style={styles.space} />
+      
       <TouchableOpacity
         style={styles.buttonContainer}
         onPress={() => {
