@@ -37,7 +37,7 @@ const DateButton = ({ first, second, third }) => {
   const [visible, setVisible] = useState(false);
 
   return (
-    <View style={{ flexDirection: "row", backgroundColor: "#F4F6FB" }}>
+    <View style={{ flexDirection: "row", backgroundColor: "#1a2222" }}>
       <ModalPopup visible={visible}>
         <View style={{ alignItems: "center" }}>
           <View style={styles.header}>
@@ -95,7 +95,7 @@ const DateButton = ({ first, second, third }) => {
 
 const BookingPage = ({ navigation }) => {
   return (
-    <View>
+    <View style = { {backgroundColor: "#1a2222"}}>
       <Text style={styles.headerText}>LKS Seat 80</Text>
 
       <Image
@@ -127,7 +127,7 @@ const BookingPage = ({ navigation }) => {
       </View>
 
       <View
-        style={{ padding: 10, marginVertical: 30, backgroundColor: "#F4F6FB" }}
+        style={{ padding: 10, marginVertical: 30, backgroundColor: "#1a2222" }}
       >
         <TouchableOpacity
           style={styles.confirmContainer}
@@ -147,7 +147,7 @@ const styles = StyleSheet.create({
     elevation: 8,
     flex: 1,
     justifyContent: "space-evenly",
-    backgroundColor: "#751811",
+    backgroundColor: "#293637",
     borderRadius: 5,
     marginTop: 20,
     marginBottom: 2,
@@ -166,6 +166,8 @@ const styles = StyleSheet.create({
     fontSize: 30,
     fontWeight: "bold",
     alignSelf: "center",
+    color: "white",
+    backgroundColor: "#1a2222",
     textTransform: "uppercase",
     paddingVertical: 15,
   },
@@ -173,6 +175,8 @@ const styles = StyleSheet.create({
     fontSize: 20,
     fontWeight: "bold",
     alignSelf: "center",
+    color: "white",
+    backgroundColor: "#1a2222",
     textTransform: "uppercase",
     paddingVertical: 15,
   },
@@ -183,7 +187,8 @@ const styles = StyleSheet.create({
   },
   confirmContainer: {
     elevation: 8,
-    backgroundColor: "#2349c2",
+    color: "white",
+    backgroundColor: "#293637",
     borderRadius: 10,
     marginBottom: 20,
     paddingVertical: 12,
