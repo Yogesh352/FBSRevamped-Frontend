@@ -38,6 +38,7 @@ const HomeStack = () => {
             backgroundColor: "#1a2222",
             height: 50,
           },
+          headerTintColor: "#ffffff",
           headerShadowVisible: false,
           headerTitleAlign: "center",
           headerTitle: "Home",
@@ -91,10 +92,7 @@ const HomeStack = () => {
           component={DetailedMap}
           options={{ headerTitle: "Focused View" }}
         />
-        <Stack.Screen
-          name="RoomDetail"
-          component={RoomDetails}
-        />
+        <Stack.Screen name="RoomDetail" component={RoomDetails} />
       </Stack.Group>
     </Stack.Navigator>
   );
