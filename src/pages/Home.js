@@ -2,7 +2,7 @@ import { Text, View, StyleSheet, TouchableOpacity } from "react-native";
 
 const HomePage = ({ navigation }) => {
   return (
-    <View style={{ padding: 10, flex: 1, backgroundColor: "#F4F6FB" }}>
+    <View style={{ padding: 10, flex: 1, backgroundColor: "#1a2222" }}>
       <TouchableOpacity
         onPress={() => navigation.navigate("Filter")}
         style={styles.buttonContainer}
@@ -56,7 +56,7 @@ export default HomePage;
 const styles = StyleSheet.create({
   buttonContainer: {
     elevation: 8,
-    backgroundColor: "#2349c2",
+    backgroundColor: "#94c0db",
     borderRadius: 10,
     marginBottom: 20,
     paddingVertical: 10,

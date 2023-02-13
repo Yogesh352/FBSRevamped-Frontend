@@ -99,7 +99,6 @@ const Scanning = ({ navigation }) => {
 
 const styles = StyleSheet.create({
     container: {
-        paddingTop: 30,
         display: "flex",
         flex: 1,
         flexDirection: "column",
