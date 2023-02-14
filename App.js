@@ -120,7 +120,7 @@ const App = () => {
                       elevation: 5,
                     }}
                   >
-                    <Ionic name="scan" color="white" size={35} />
+                    <Ionic name="scan" color="black" size={35} />
                   </View>
                 </TouchableOpacity>
               ),

@@ -42,7 +42,7 @@ const FilterPage = ({ navigation }) => {
                 style={styles.submitButton}
                 activeOpacity={0.7}
               >
-                <Text style={styles.buttonText}>SUBMIT</Text>
+                <Text style={[styles.buttonText, {color:"black"}]}>SUBMIT</Text>
               </TouchableOpacity>
             </View>
           </View>
