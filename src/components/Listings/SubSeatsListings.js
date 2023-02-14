@@ -1,6 +1,8 @@
-import { useNavigation } from "@react-navigation/native";
 import React, { useEffect, useState } from "react";
+import Ionicons from "react-native-vector-icons/Ionicons";
+
 import {
+  SafeAreaView,
   LayoutAnimation,
   StyleSheet,
   View,
@@ -10,12 +12,13 @@ import {
   TouchableOpacity,
   Platform,
 } from "react-native";
-import Ionicons from "react-native-vector-icons/Ionicons";
+import { useNavigation } from "@react-navigation/native";
 
 const ExpandableComponent = ({ item, onClickFunction }) => {
   //Custom Component for the Expandable List
   const [layoutHeight, setLayoutHeight] = useState(0);
 
+  const navigation = useNavigation();
   useEffect(() => {
     if (item.isExpanded) {
       setLayoutHeight(null);
@@ -24,15 +27,12 @@ const ExpandableComponent = ({ item, onClickFunction }) => {
     }
   }, [item.isExpanded]);
 
-  const navigation = useNavigation();
-
   return (
     <View
       style={{
         width: "100%",
         flexDirection: "column",
         backgroundColor: "#1a2222",
-        marginTop: 5,
       }}
     >
       {/*Header of the Expandable List Item*/}
@@ -47,7 +47,9 @@ const ExpandableComponent = ({ item, onClickFunction }) => {
             name="map-outline"
             size={18}
             color={"white"}
-            style={{ alignSelf: "center" }}
+            style={{
+              alignSelf: "center",
+            }}
           />
         </TouchableOpacity>
       </TouchableOpacity>
@@ -55,7 +57,6 @@ const ExpandableComponent = ({ item, onClickFunction }) => {
         style={{
           height: layoutHeight,
           overflow: "hidden",
-          marginTop: 5,
         }}
       >
         {/*Content under the header of the Expandable List Item*/}
@@ -64,7 +65,7 @@ const ExpandableComponent = ({ item, onClickFunction }) => {
             key={key}
             style={styles.content}
             // edit to go to new page
-            onPress={() => navigation.navigate("RoomDetail")}
+            onPress={() => alert("Id: " + item.id + " val: " + item.val)}
           >
             <Text style={styles.text}>{item.val}</Text>
 
@@ -76,7 +77,7 @@ const ExpandableComponent = ({ item, onClickFunction }) => {
   );
 };
 
-const FacilitiesListing = (navigation) => {
+const SubSeatListing = () => {
   const [listDataSource, setListDataSource] = useState(CONTENT);
   const [multiSelect, setMultiSelect] = useState(false);
 
@@ -111,37 +112,15 @@ const FacilitiesListing = (navigation) => {
       }}
     >
       <View style={styles.container}>
-        <View
-          style={{
-            flexDirection: "row-reverse",
-            padding: 4,
-            backgroundColor: "#1a2222",
-          }}
-        >
-          <TouchableOpacity onPress={() => setMultiSelect(!multiSelect)}>
-            <Text
-              style={{
-                textAlign: "center",
-                justifyContent: "center",
-                color: "white",
-                paddingTop: 10,
-              }}
-            >
-              {multiSelect ? "Single Expand" : "Multiple Expand"}
-            </Text>
-          </TouchableOpacity>
-        </View>
         <ScrollView>
           {listDataSource.map((item, key) => (
-            <>
-              <ExpandableComponent
-                key={item.category_name}
-                onClickFunction={() => {
-                  updateLayout(key);
-                }}
-                item={item}
-              />
-            </>
+            <ExpandableComponent
+              key={item.category_name}
+              onClickFunction={() => {
+                updateLayout(key);
+              }}
+              item={item}
+            />
           ))}
         </ScrollView>
       </View>
@@ -149,27 +128,26 @@ const FacilitiesListing = (navigation) => {
   );
 };
 
-export default FacilitiesListing;
+export default SubSeatListing;
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    color: "#1a2222",
   },
   header: {
-    backgroundColor: "#293637",
+    backgroundColor: "#4a5a64",
     padding: 10,
     justifyContent: "space-between",
     flexDirection: "row",
     borderRadius: 5,
     borderWidth: 1,
     borderColor: "#1a2222",
-    margin: 1,
+
+    marginHorizontal: 3,
     flex: 1,
   },
   headerText: {
     fontSize: 16,
-    maxWidth: 300,
     fontWeight: "medium",
     textAlign: "left",
     paddingLeft: 0,
@@ -184,16 +162,19 @@ const styles = StyleSheet.create({
   text: {
     fontSize: 16,
     color: "white",
-    padding: 10,
   },
   content: {
-    paddingLeft: 5,
-    width: "97%",
+    padding: 10,
+    // paddingLeft: 5,
+    width: "98%",
     alignSelf: "center",
-    justifyContent: "center",
-    backgroundColor: "#293637",
+    justifyContent: "space-between",
+    flexDirection: "row",
+
+    backgroundColor: "#657384",
     borderWidth: 0.5,
     borderBottomWidth: 0,
+
     borderColor: "#1a2222",
   },
 });
@@ -203,27 +184,21 @@ const styles = StyleSheet.create({
 const CONTENT = [
   {
     isExpanded: false,
-    category_name: "School of Accountancy",
+    category_name: "Level 2",
     subcategory: [
-      { id: 1, val: "Group Study Room (GSR) 3-5" },
-      { id: 3, val: "Group Study Room (GSR) 3-2" },
+      { id: "Seat1", val: "Seat 1" },
+      { id: "Seat2", val: "Seat 2" },
+      { id: "Seat3", val: "Seat 3" },
+      { id: "Seat4", val: "Seat 4" },
     ],
   },
   {
     isExpanded: false,
-    category_name:
-      "School of Economics/School of Computing and Information Systems 2",
+    category_name: "Level 3",
     subcategory: [
-      { id: 4, val: "Group Study Room (GSR) 3-4" },
-      { id: 5, val: "Group Study Room (GSR) 3-6" },
-    ],
-  },
-  {
-    isExpanded: false,
-    category_name: "School of Computing and Information Systems 1",
-    subcategory: [
-      { id: 7, val: "Group Study Room (GSR) 3-1" },
-      { id: 9, val: "Group Study Room (GSR) 3-2" },
+      { id: "Seat1", val: "Seat 4" },
+      { id: "Seat2", val: "Seat 5" },
+      { id: "Seat3", val: "Seat 6" },
     ],
   },
 ];

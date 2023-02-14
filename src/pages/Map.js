@@ -21,7 +21,8 @@ const MapPage = ({ navigation }) => {
           showsButtons
           showsPagination={false}
           // nextButton={<Text style={styles.buttonText}>›</Text>}
-          // prevButton={<Text style={styles.buttonText}>‹</Text>}
+          nextButton={<Text style={{ color: "#e9e8ea", fontSize: 45 }}>›</Text>}
+          prevButton={<Text style={{ color: "#e9e8ea", fontSize: 45 }}>‹</Text>}
         >
           <View style={styles.slide1}>
             <Text style={styles.text}>Level 3</Text>
@@ -126,6 +127,7 @@ const styles = StyleSheet.create({
   },
 
   slide1: {
+    marginTop: -5,
     flex: 1,
     justifyContent: "center",
     alignItems: "center",
