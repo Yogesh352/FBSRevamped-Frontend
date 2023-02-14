@@ -2,8 +2,11 @@ import React from "react";
 import { View, Text, Image, StyleSheet } from "react-native";
 import Ionicons from "@expo/vector-icons/Ionicons";
 import { Button } from "react-native-paper";
+import { TouchableOpacity } from "@gorhom/bottom-sheet";
+import { useNavigation } from "@react-navigation/native";
 
 const BottomSheetContent = () => {
+  const navigate = useNavigation();
   return (
     <View style={styles.contentContainer}>
       <View
@@ -47,9 +50,15 @@ const BottomSheetContent = () => {
         </View>
       </View>
       <View>
-        <Button style={styles.buttonStyle}>
-          <Text style={styles.buttonText}>Book Now</Text>
-        </Button>
+        <TouchableOpacity
+          onPress={() => {
+            navigate.navigate("Bookings");
+          }}
+        >
+          <Button style={styles.buttonStyle}>
+            <Text style={styles.buttonText}>Book Now</Text>
+          </Button>
+        </TouchableOpacity>
       </View>
     </View>
   );
@@ -92,7 +101,7 @@ const styles = StyleSheet.create({
     alignSelf: "center",
   },
   buttonText: {
-    color: "#e9e8ea",
+    color: "black",
     fontWeight: "bold",
   },
 });

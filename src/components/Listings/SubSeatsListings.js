@@ -65,7 +65,7 @@ const ExpandableComponent = ({ item, onClickFunction }) => {
             key={key}
             style={styles.content}
             // edit to go to new page
-            onPress={() => alert("Id: " + item.id + " val: " + item.val)}
+            onPress={() => navigation.navigate("Bookings")}
           >
             <Text style={styles.text}>{item.val}</Text>
 
