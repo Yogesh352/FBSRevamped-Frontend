@@ -1,5 +1,6 @@
+import { useState } from "react";
 import Ionic from "react-native-vector-icons/Ionicons";
-import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
+import { View, Text, StyleSheet, TouchableOpacity, Button } from "react-native";
 
 // array of days
 const days = ["Sun", "Mon", "Tues", "Wed", "Thurs", "Fri", "Sat"];
@@ -26,6 +27,46 @@ function formatDate(hours) {
   }
 }
 
+function IconToShow(props) {
+  const [confirmed, setConfirmed] = useState(false);
+
+
+  if (props.type === "Booking"){
+    return(
+      <TouchableOpacity>
+        <Ionic
+          name="location"
+          size={40}
+          color="#657384"
+          style={styles.checkInButton}
+        />
+      </TouchableOpacity>
+    )
+  } else if (!confirmed) {
+    return (
+      <TouchableOpacity onPress={() => setConfirmed(!confirmed)}>
+        <Ionic
+          name="checkmark"
+          size={40}
+          color="#657384"
+          style={styles.checkInButton}
+        />
+      </TouchableOpacity>
+    )
+  } else {
+    return (
+      <TouchableOpacity>
+        <Ionic
+          name="checkmark-done"
+          size={40}
+          color="#657384"
+          style={styles.checkInButton}
+        />
+      </TouchableOpacity>
+    )
+  }
+}
+
 export default function Booking(props) {
   return (
     <View style={styles.box}>
@@ -40,14 +81,8 @@ export default function Booking(props) {
           </Text>
           SCIS1 Seminar Room 3-1
         </Text>
-      <TouchableOpacity>
-        <Ionic
-          name="location"
-          size={40}
-          color="#657384"
-          style={styles.checkInButton}
-        />
-      </TouchableOpacity>
+
+        <IconToShow type={props.type}/>
     </View>
   );
 }
@@ -88,4 +123,13 @@ const styles = StyleSheet.create({
   checkInButton: {
     marginTop: 8,
   },
+  confirmButton: {
+    backgroundColor: "#657384",
+    marginLeft: -3,
+    height: 60,
+    borderTopRightRadius: 10,
+    borderBottomRightRadius: 10,
+    fontSize: 12,
+    color: "white"
+  }
 });

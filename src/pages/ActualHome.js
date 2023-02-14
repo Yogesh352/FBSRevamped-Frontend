@@ -40,7 +40,7 @@ const ActualHome = () => {
     <View style={styles.content}>
         <ScrollView style={styles.scroll}> 
             <Text style={styles.titleText}> Upcoming Bookings </Text>
-            <BookingComponent />
+            <BookingComponent type="Booking"/>
             <BookingComponent />
             {/* <BookingComponent />
             <BookingComponent />
@@ -63,7 +63,7 @@ const { height, width } = Dimensions.get("window");
 
 const styles = StyleSheet.create({
   content: {
-    paddingHorizontal: 20,
+    paddingHorizontal: 16,
     backgroundColor: "#1a2222",
     height: "100%"
   },

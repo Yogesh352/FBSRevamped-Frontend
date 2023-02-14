@@ -1,8 +1,10 @@
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import React from "react";
-import { LinearGradient } from "expo-linear-gradient";
 import ActualHome from "../pages/ActualHome";
-import { StyleSheet, Button, LogoTitle } from "react-native";
+import { StyleSheet, TouchableOpacity, LogoTitle } from "react-native";
+import { Card } from "react-native-paper";
+import Ionic from "react-native-vector-icons/Ionicons";
+
 import BookingPage from "../pages/Booking";
 import FacilityInformation from "../pages/FacilityInformation";
 import FilterPage from "../pages/Filter";
@@ -10,16 +12,16 @@ import HomePage from "../pages/Home";
 import ListingsPage from "../pages/Listings";
 import MapPage from "../pages/Map";
 import RoomDetails from "../pages/RoomDetail";
-
+import TaskList from "../pages/TaskList";
 import ScanningPage from "../pages/Scanning";
 
-const Stack = createNativeStackNavigator();
 import DetailedMap from "../pages/DetailedMap";
-const HomeStack = () => {
+const Stack = createNativeStackNavigator();
+const HomeStack = ( {navigation} ) => {
   return (
     <Stack.Navigator>
       <Stack.Group
-        screenOptions={{
+        screenOptions={({ navigation }) => ({
           // headerTitleStyle: {
           //   fontWeight: "bold",
           //   color: "white",
@@ -34,6 +36,13 @@ const HomeStack = () => {
           // headerStyle: {
           //   height: 150,
           // },
+          headerRight: () => (
+            <TouchableOpacity onPress={() => navigation.navigate("TaskList")}>
+              <Card>
+                  <Ionic name="list" color="white" size={30} style={{ backgroundColor: "#1a2222" }}/>
+              </Card>
+          </TouchableOpacity>
+          ),
           headerStyle: {
             backgroundColor: "#1a2222",
             height: 50,
@@ -45,12 +54,21 @@ const HomeStack = () => {
           headerTitleStyle: {
             color: "white",
           },
-        }}
+        })}
       >
         <Stack.Screen
-          options={{ headerTitle: "Home" }}
+          options={{ 
+            headerTitle: "Navigation",
+          }}
           name="Default"
           component={HomePage}
+        />
+        <Stack.Screen
+          name="TaskList"
+          component={TaskList}
+          options={({ navigation }) => ({
+            headerTitle: "Task List",
+          })}
         />
         <Stack.Screen
           options={{ headerTitle: "Bookings" }}
@@ -92,7 +110,7 @@ const HomeStack = () => {
           component={DetailedMap}
           options={{ headerTitle: "Focused View" }}
         />
-        <Stack.Screen name="RoomDetail" component={RoomDetails} />
+        <Stack.Screen name="RoomDetail" component={RoomDetails}/>
       </Stack.Group>
     </Stack.Navigator>
   );

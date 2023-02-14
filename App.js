@@ -10,6 +10,7 @@ import ProfilePage from "./src/pages/Profile";
 import { TouchableOpacity, View, StyleSheet } from "react-native";
 import HomeStack from "./src/navigation/HomeStack";
 import { LinearGradient } from "expo-linear-gradient";
+import { StackRouter } from "react-navigation";
 
 const Tab = createBottomTabNavigator();
 
