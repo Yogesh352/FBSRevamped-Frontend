@@ -51,7 +51,9 @@ const ActualHome = () => {
             <Text style={styles.favourite}> {favoriteDisplayed.title} </Text>
             <FavouritesComponent />
 
-            <Text style={styles.titleText}> Instant Seating </Text>
+            {/* <Text style={styles.titleText}> Instant Seating </Text>
+            <InstantBooking /> */}
+            <Text style={styles.titleText}> Book Now </Text>
             <InstantBooking />
         </ScrollView>
     </View>

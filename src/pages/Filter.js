@@ -11,21 +11,22 @@ const FilterPage = ({ navigation }) => {
     setStartTimeChange("");
     setEndTimeChange("");
   };
+
   return (
     <View style={styles.content}>
       <View style={styles.container}>
-        <Calendar/>
-        <TimeSelection/>
+        <Calendar />
+        <TimeSelection />
         <View style={styles.facilityTypeDropdown}>
           <FacilityTypeDropdown />
         </View>
         <View style={styles.locationDropdown}>
-          <LocationDropDown/>
+          <LocationDropDown />
         </View>
 
         <View style={{ flexDirection: "row" }}>
           <View style={{ flexDirection: "row", flex: 1 }}></View>
-          <View style={{ flexDirection: "row", flex: 2 }}>
+          <View style={{ flexDirection: "row", flex: 1.5 }}>
             <View style={{ flex: 1 }}>
               <TouchableOpacity
                 onPress={reset}
@@ -37,7 +38,7 @@ const FilterPage = ({ navigation }) => {
             </View>
             <View style={{ flex: 1 }}>
               <TouchableOpacity
-                // onPress={}
+                onPress={() => navigation.navigate("Listings")}
                 style={styles.submitButton}
                 activeOpacity={0.7}
               >
@@ -53,9 +54,9 @@ const FilterPage = ({ navigation }) => {
 
 const styles = StyleSheet.create({
   content: {
-    flex: 1, 
+    flex: 1,
     justifyContent: "space-evenly",
-    backgroundColor: '#1a2222'
+    backgroundColor: "#1a2222",
   },
   container: {
     flex: 1,
@@ -63,32 +64,32 @@ const styles = StyleSheet.create({
     minWidth: "100%",
     marginTop: "50%",
   },
-  facilityTypeDropdown:{
-    zIndex: 2, 
-    alignItems: "center", 
-    justifyContent: "center"
+  facilityTypeDropdown: {
+    zIndex: 2,
+    alignItems: "center",
+    justifyContent: "center",
   },
   locationDropdown: {
     zIndex: 1,
     alignItems: "center",
     justifyContent: "center",
-    paddingTop: 5
+    paddingTop: 5,
   },
   buttonText: {
     textAlign: "center",
     fontWeight: "500",
-    color: "white"
+    color: "white",
   },
   resetButton: {
-    backgroundColor: "#B22222",
+    backgroundColor: "#293637",
     width: "70%",
     padding: 10,
-    marginHorizontal: 20,
+    marginLeft: 30,
     marginVertical: 50,
     borderRadius: 5,
   },
   submitButton: {
-    backgroundColor: "#293637",
+    backgroundColor: "#94c0db",
     width: "70%",
     padding: 10,
     marginHorizontal: 20,
