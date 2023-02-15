@@ -193,13 +193,13 @@ const CONTENT = [
       { id: "LKS5", val: "Level 5" },
     ],
   },
-  {
-    isExpanded: false,
-    category_name: "Kwa Geok Choo Law Library",
-    subcategory: [
-      { id: "KGC4", val: "Level 4" },
-      { id: "KGC5", val: "Level 5" },
-      { id: "KGC6", val: "Level 6" },
-    ],
-  },
+  // {
+  //   isExpanded: false,
+  //   category_name: "Kwa Geok Choo Law Library",
+  //   subcategory: [
+  //     { id: "KGC4", val: "Level 4" },
+  //     { id: "KGC5", val: "Level 5" },
+  //     { id: "KGC6", val: "Level 6" },
+  //   ],
+  // },
 ];
