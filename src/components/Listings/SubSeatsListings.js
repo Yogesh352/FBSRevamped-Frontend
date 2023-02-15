@@ -13,6 +13,7 @@ import {
   UIManager,
   TouchableOpacity,
   Platform,
+  Image,
 } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 
@@ -82,20 +83,25 @@ const ExpandableComponent = ({ item, onClickFunction }) => {
                 />
               </TouchableHighlight>
             </View>
+            <Image
+              style={styles.locationImage}
+              source={require("../../images/annotated_map.jpg")}
+            />
           </View>
         </View>
       </Modal>
       {/*Header of the Expandable List Item*/}
       <TouchableOpacity
         activeOpacity={0.8}
-        onPress={onClickFunction}
+        // onPress={onClickFunction}
+        onPress={() => navigation.navigate("Map")}
         style={styles.header}
       >
         <Text style={styles.headerText}>{item.category_name}</Text>
         <View style={{ flexDirection: "row" }}>
-          <TouchableOpacity onPress={() => setOpenModal(true)}>
+          {/* <TouchableOpacity onPress={() => setOpenModal(true)}>
             <Text style={{ marginRight: 10, color: "white" }}>Test B</Text>
-          </TouchableOpacity>
+          </TouchableOpacity> */}
           {/* <TouchableOpacity onPress={() => navigation.navigate("Map")}>
             <Ionicons
               name="map-outline"
@@ -236,7 +242,7 @@ const styles = StyleSheet.create({
     alignSelf: "center",
     alignContent: "center",
     width: "90%",
-    height: "70%",
+    height: "60%",
     padding: 10,
     borderRadius: 10,
     backgroundColor: "#293637",
@@ -251,6 +257,11 @@ const styles = StyleSheet.create({
     shadowRadius: 3.5,
     elevation: 20,
   },
+  locationImage: {
+    height: "70%",
+    width: "100%",
+    borderRadius: 10,
+  },
   modalText: {
     color: "#e9e8ea",
     fontSize: 20,
@@ -264,19 +275,28 @@ const CONTENT = [
     isExpanded: false,
     category_name: "Level 2",
     subcategory: [
-      { id: "Seat1", val: "Seat 1" },
-      { id: "Seat2", val: "Seat 2" },
-      { id: "Seat3", val: "Seat 3" },
-      { id: "Seat4", val: "Seat 4" },
+      //   { id: "Seat1", val: "Seat 1" },
+      //   { id: "Seat2", val: "Seat 2" },
+      //   { id: "Seat3", val: "Seat 3" },
+      //   { id: "Seat4", val: "Seat 4" },
     ],
   },
   {
     isExpanded: false,
     category_name: "Level 3",
     subcategory: [
-      { id: "Seat1", val: "Seat 4" },
-      { id: "Seat2", val: "Seat 5" },
-      { id: "Seat3", val: "Seat 6" },
+      //   { id: "Seat1", val: "Seat 4" },
+      //   { id: "Seat2", val: "Seat 5" },
+      //   { id: "Seat3", val: "Seat 6" },
+    ],
+  },
+  {
+    isExpanded: false,
+    category_name: "Level 4",
+    subcategory: [
+      //   { id: "Seat1", val: "Seat 4" },
+      //   { id: "Seat2", val: "Seat 5" },
+      //   { id: "Seat3", val: "Seat 6" },
     ],
   },
 ];
