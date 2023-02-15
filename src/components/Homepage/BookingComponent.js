@@ -55,7 +55,7 @@ function IconToShow(props) {
     )
   } else {
     return (
-      <TouchableOpacity>
+      <TouchableOpacity onPress={() => setConfirmed(!confirmed)}>
         <Ionic
           name="checkmark-done"
           size={40}
