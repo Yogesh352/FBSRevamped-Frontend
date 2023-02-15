@@ -4,9 +4,10 @@ import DropDownPicker from 'react-native-dropdown-picker';
 
 function FacilityTypeDropdown(props) {
     const [open, setOpen] = useState(false);
-    var [value, setValue] = useState(['chatterbox', 'classroom', 'group study room', 'meeting pod', 'phone booth', 
+    var [value, setValue] = useState(['seat', 'chatterbox', 'classroom', 'group study room', 'meeting pod', 'phone booth', 
                                             'project room', 'seminar room', ,'smuc facilities', 'study booth']);
     const [items, setItems] = useState([
+      {label: 'Seat', value: 'seat'},
       {label: 'Chatterbox', value: 'chatterbox'},
       {label: 'Classroom', value: 'classroom'},
       {label: 'Group Study Room (GSR)', value: 'group study room'},
