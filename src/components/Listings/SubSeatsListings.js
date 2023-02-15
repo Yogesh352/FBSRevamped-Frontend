@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from "react";
-import Ionicons from "react-native-vector-icons/Ionicons";
+import Ionic from "react-native-vector-icons/Ionicons";
 
 import {
   SafeAreaView,
   LayoutAnimation,
   StyleSheet,
+  TouchableHighlight,
+  Modal,
   View,
   Text,
   ScrollView,
@@ -17,6 +19,8 @@ import { useNavigation } from "@react-navigation/native";
 const ExpandableComponent = ({ item, onClickFunction }) => {
   //Custom Component for the Expandable List
   const [layoutHeight, setLayoutHeight] = useState(0);
+
+  const [openModal, setOpenModal] = useState(false);
 
   const navigation = useNavigation();
   useEffect(() => {
@@ -35,6 +39,52 @@ const ExpandableComponent = ({ item, onClickFunction }) => {
         backgroundColor: "#1a2222",
       }}
     >
+      <Modal
+        transparent={true}
+        visible={openModal}
+        setModalVisiblity={() => {
+          setModalVisible((preState) => (preState = !preState));
+        }}
+        onRequestClose={() => {
+          Alert.alert("Modal has been closed.");
+        }}
+      >
+        <View
+          style={{
+            height: "100%",
+            justifyContent: "center",
+            backgroundColor: "rgba(0, 0, 0, 0.7)",
+          }}
+        >
+          <View style={styles.modalStyle}>
+            <View
+              style={{
+                flexDirection: "row",
+                width: "100%",
+                justifyContent: "space-between",
+                paddingBottom: 10,
+              }}
+            >
+              <Text style={styles.modalText}>Floor Map</Text>
+              <TouchableHighlight
+                onPress={() => {
+                  setOpenModal(false);
+                  console.log(openModal);
+                }}
+              >
+                <Ionic
+                  name="close"
+                  size={30}
+                  color={"#e9e8ea"}
+                  onPress={() => {
+                    setOpenModal(false);
+                  }}
+                />
+              </TouchableHighlight>
+            </View>
+          </View>
+        </View>
+      </Modal>
       {/*Header of the Expandable List Item*/}
       <TouchableOpacity
         activeOpacity={0.8}
@@ -42,16 +92,21 @@ const ExpandableComponent = ({ item, onClickFunction }) => {
         style={styles.header}
       >
         <Text style={styles.headerText}>{item.category_name}</Text>
-        <TouchableOpacity onPress={() => navigation.navigate("Map")}>
-          <Ionicons
-            name="map-outline"
-            size={18}
-            color={"white"}
-            style={{
-              alignSelf: "center",
-            }}
-          />
-        </TouchableOpacity>
+        <View style={{ flexDirection: "row" }}>
+          <TouchableOpacity onPress={() => setOpenModal(true)}>
+            <Text style={{ marginRight: 10, color: "white" }}>Test B</Text>
+          </TouchableOpacity>
+          {/* <TouchableOpacity onPress={() => navigation.navigate("Map")}>
+            <Ionicons
+              name="map-outline"
+              size={18}
+              color={"white"}
+              style={{
+                alignSelf: "center",
+              }}
+            />
+          </TouchableOpacity> */}
+        </View>
       </TouchableOpacity>
       <View
         style={{
@@ -176,6 +231,29 @@ const styles = StyleSheet.create({
     borderBottomWidth: 0,
 
     borderColor: "#1a2222",
+  },
+  modalStyle: {
+    alignSelf: "center",
+    alignContent: "center",
+    width: "90%",
+    height: "70%",
+    padding: 10,
+    borderRadius: 10,
+    backgroundColor: "#293637",
+    shadow: {
+      shadowColor: "black",
+      shadowOffset: {
+        width: 0,
+        height: 10,
+      },
+    },
+    shadowOpacity: 0.25,
+    shadowRadius: 3.5,
+    elevation: 20,
+  },
+  modalText: {
+    color: "#e9e8ea",
+    fontSize: 20,
   },
 });
 

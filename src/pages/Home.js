@@ -64,7 +64,7 @@ const styles = StyleSheet.create({
   },
   buttonText: {
     fontSize: 18,
-    color: "#fff",
+    color: "black",
     fontWeight: "bold",
     alignSelf: "center",
     textTransform: "uppercase",

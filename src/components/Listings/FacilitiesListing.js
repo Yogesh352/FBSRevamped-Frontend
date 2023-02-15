@@ -42,14 +42,17 @@ const ExpandableComponent = ({ item, onClickFunction }) => {
         style={styles.header}
       >
         <Text style={styles.headerText}>{item.category_name}</Text>
-        <TouchableOpacity onPress={() => navigation.navigate("Map")}>
+        <TouchableOpacity>
+          <Text style={{ marginRight: 10, color: "white" }}>Test B</Text>
+        </TouchableOpacity>
+        {/* <TouchableOpacity onPress={() => navigation.navigate("Map")}>
           <Ionicons
             name="map-outline"
             size={18}
             color={"white"}
             style={{ alignSelf: "center" }}
           />
-        </TouchableOpacity>
+        </TouchableOpacity> */}
       </TouchableOpacity>
       <View
         style={{

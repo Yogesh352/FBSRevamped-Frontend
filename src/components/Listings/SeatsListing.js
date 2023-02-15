@@ -84,48 +84,51 @@ const SeatsListing = () => {
   };
 
   return (
-    <ScrollView
-      style={{
-        width: "100%",
-        flex: 1,
-        marginTop: "0%",
-        backgroundColor: "#1a2222",
-      }}
-    >
-      <View style={styles.container}>
-        <View
-          style={{
-            flexDirection: "row-reverse",
-            padding: 4,
-            backgroundColor: "#1a2222",
-          }}
-        >
-          <TouchableOpacity onPress={() => setMultiSelect(!multiSelect)}>
-            <Text
-              style={{
-                textAlign: "center",
-                justifyContent: "center",
-                color: "white",
-                paddingTop: 10,
-              }}
-            >
-              {multiSelect ? "Single Expand" : "Multiple Expand"}
-            </Text>
-          </TouchableOpacity>
+    <>
+      <ScrollView
+        style={{
+          width: "100%",
+          flex: 1,
+          marginTop: "0%",
+          backgroundColor: "#1a2222",
+        }}
+      >
+        <View style={styles.container}>
+          <View
+            style={{
+              flexDirection: "row-reverse",
+
+              padding: 4,
+              backgroundColor: "#1a2222",
+            }}
+          >
+            <TouchableOpacity onPress={() => setMultiSelect(!multiSelect)}>
+              <Text
+                style={{
+                  textAlign: "center",
+                  justifyContent: "center",
+                  color: "white",
+                  paddingTop: 10,
+                }}
+              >
+                {multiSelect ? "Single Expand" : "Multiple Expand"}
+              </Text>
+            </TouchableOpacity>
+          </View>
+          <ScrollView>
+            {listDataSource.map((item, key) => (
+              <ExpandableComponent
+                key={item.category_name}
+                onClickFunction={() => {
+                  updateLayout(key);
+                }}
+                item={item}
+              />
+            ))}
+          </ScrollView>
         </View>
-        <ScrollView>
-          {listDataSource.map((item, key) => (
-            <ExpandableComponent
-              key={item.category_name}
-              onClickFunction={() => {
-                updateLayout(key);
-              }}
-              item={item}
-            />
-          ))}
-        </ScrollView>
-      </View>
-    </ScrollView>
+      </ScrollView>
+    </>
   );
 };
 
