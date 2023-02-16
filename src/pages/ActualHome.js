@@ -41,7 +41,7 @@ const ActualHome = () => {
         <ScrollView style={styles.scroll}> 
             <Text style={styles.titleText}> Upcoming Bookings </Text>
             <BookingComponent type="Booking"/>
-            <BookingComponent />
+            <BookingComponent type="Booking"/>
             {/* <BookingComponent />
             <BookingComponent />
             <BookingComponent />
