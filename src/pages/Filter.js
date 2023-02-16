@@ -8,8 +8,8 @@ import TimeSelection from "../components/Filter/TimeSelection";
 
 const FilterPage = ({ navigation }) => {
   const reset = () => {
-    setStartTimeChange("");
-    setEndTimeChange("");
+    // setStartTimeChange("");
+    // setEndTimeChange("");
   };
 
   return (
