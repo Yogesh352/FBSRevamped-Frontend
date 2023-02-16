@@ -8,7 +8,7 @@ export default function InstantBooking() {
         <TouchableOpacity onPress={() => navigation.navigate("Filter")}>
             <Card>
                 <Card.Cover 
-                source={require("../../assets/cafe.jpg")}
+                source={require("../../assets/cafe2.jpg")}
                 style={styles.findMeSeatButton}
                 />
             <Text style={styles.findMeASeatText}> Click to Book </Text>
