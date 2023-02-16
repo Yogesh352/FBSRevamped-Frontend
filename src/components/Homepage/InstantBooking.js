@@ -11,7 +11,7 @@ export default function InstantBooking() {
                 source={require("../../assets/cafe.jpg")}
                 style={styles.findMeSeatButton}
                 />
-            <Text style={styles.findMeASeatText}> Click to Book </Text>
+            <Text style={styles.findMeASeatText}> Book a Facility </Text>
             </Card>
         </TouchableOpacity>
     )
@@ -22,11 +22,11 @@ const styles = StyleSheet.create({
       color: "white",
       height: 100,
       width: "100%",
-      borderRadius: 12,
+      borderRadius: 12
     },
     findMeASeatText: {
-      marginTop: -28,
-      marginLeft: "62%",
+      marginTop: -44,
+      marginLeft: "56%",
       fontSize: 20,
       fontWeight: "bold",
       color: "white",
