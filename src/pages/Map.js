@@ -46,7 +46,7 @@ const MapPage = ({ navigation }) => {
           }}
         >
           <View style={{ width: "70%" }}>
-            <Text style={styles.popupTitle}>LKS Library Level 3</Text>
+            <Text style={styles.popupTitle}>LKS Library Level 2</Text>
             <View style={styles.iconAndText}>
               <Ionicons
                 name="location-sharp"

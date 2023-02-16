@@ -62,7 +62,7 @@ const styles = StyleSheet.create({
     flex: 1,
     minHeight: "100%",
     minWidth: "100%",
-    marginTop: 150,
+    marginTop: "50%",
   },
   facilityTypeDropdown: {
     zIndex: 2,

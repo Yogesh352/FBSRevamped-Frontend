@@ -73,11 +73,11 @@ const TimePicker = () => {
                 Booking for
                 <Text style={{ fontWeight: "bold" }}>
                   {" "}
-                  seat 14 at LKS Level 3{" "}
+                  seat 14 at LKS Level 2{" "}
                 </Text>{" "}
                 at the timing{" "}
                 <Text style={{ fontWeight: "bold" }}>
-                  8am to 11am
+                  1600hrs - 1800hrs
                 </Text>{" "}
                 has been confirmed
               </Text>
@@ -156,11 +156,11 @@ const timeSlots = [
   { id: 2, time: "08:30 - 09:00", booked: false },
   { id: 3, time: "09:00 - 09:30", booked: false },
   { id: 4, time: "09:30 - 10:00", booked: false },
-  { id: 5, time: "10:00 - 10:30", booked: false },
+  { id: 5, time: "10:00 - 10:30", booked: true },
   { id: 6, time: "10:30 - 11:00", booked: false },
-  // { id: 7, time: "11:00 - 11:30", booked: false },
-  // { id: 8, time: "11:30 - 12:00", booked: false },
-  // { id: 9, time: "12:00 - 12:30", booked: true },
+  { id: 7, time: "11:00 - 11:30", booked: false },
+  { id: 8, time: "11:30 - 12:00", booked: false },
+  { id: 9, time: "12:00 - 12:30", booked: true },
   //   { id: 10, time: "12:30 - 13:00", booked: true },
   //   { id: 11, time: "13:00 - 13:30", booked: true },
   //   { id: 12, time: "13:30 - 14:00", booked: false },

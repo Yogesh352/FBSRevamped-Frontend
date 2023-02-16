@@ -130,7 +130,7 @@ const DetailedMap = () => {
             </View>
           </Modal>
           <View style={{ flexDirection: "row" }}>
-            <Text style={styles.titleText}>LKS Level 2 Section C</Text>
+            <Text style={styles.titleText}>LKS Level 2 Section A</Text>
             <TouchableHighlight
               onPress={() => {
                 setOpenModal(true);

@@ -3,24 +3,24 @@ import { Card, Text } from "react-native-paper";
 
 // mocked data (Favourites)
 const data = [
-  {
-    id: 1,
-    title: "School of Computing",
-    body: "Seminar Room 3-1",
-    imgUrl: require("../../assets/sr.jpg"),
-  },
-  {
-    id: 2,
-    title: "School of Accountancy",
-    body: "Group Study Room 2-11",
-    imgUrl: require("../../assets/gsr.jpg"),
-  },
-  {
-    id: 3,
-    title: "School of Law",
-    body: "Classroom B1-1",
-    imgUrl: require("../../assets/cr.jpg"),
-  },
+    {
+      id: 1,
+      title: "School of Computing",
+      body: "Seminar Room 3-1",
+      imgUrl: "https://picsum.photos/id/11/200/300",
+    },
+    {
+      id: 2,
+      title: "School of Accountancy",
+      body: "Group Study Room 2-11",
+      imgUrl: "https://picsum.photos/id/10/200/300",
+    },
+    {
+      id: 3,
+      title: "School of Law",
+      body: "Classroom B1-1",
+      imgUrl: "https://picsum.photos/id/12/200/300",
+    },
 ];
 
 // width value (for styling)
@@ -40,7 +40,7 @@ export default function FavouritesComponent() {
                         <Card style={[styles.card]}>
                             <Card.Cover
                             style={styles.image}
-                            source={item.imgUrl}
+                            source={{ uri: item.imgUrl }}
                             />
                             <Card.Content>
                                 <Text style={styles.body}> {item.body} </Text>
