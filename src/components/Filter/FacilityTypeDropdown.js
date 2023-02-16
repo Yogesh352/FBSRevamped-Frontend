@@ -100,6 +100,10 @@ function FacilityTypeDropdown(props) {
                         showBadgeDot={false}
                         listMode="SCROLLVIEW"
                         style={styles.dropdown}
+                        selectedItemLabelStyle={{
+                            fontWeight: "bold"
+                        }}
+                        badgeColors={["#94c0db"]}
                     />
                 </View>
 
