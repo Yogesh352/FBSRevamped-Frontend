@@ -42,14 +42,17 @@ const ExpandableComponent = ({ item, onClickFunction }) => {
         style={styles.header}
       >
         <Text style={styles.headerText}>{item.category_name}</Text>
-        <TouchableOpacity onPress={() => navigation.navigate("Map")}>
+        <TouchableOpacity>
+          <Text style={{ marginRight: 10, color: "white" }}>Test B</Text>
+        </TouchableOpacity>
+        {/* <TouchableOpacity onPress={() => navigation.navigate("Map")}>
           <Ionicons
             name="map-outline"
             size={18}
             color={"white"}
             style={{ alignSelf: "center" }}
           />
-        </TouchableOpacity>
+        </TouchableOpacity> */}
       </TouchableOpacity>
       <View
         style={{
@@ -201,29 +204,29 @@ const styles = StyleSheet.create({
 //Dummy content to show
 //You can also use dynamic data by calling webservice
 const CONTENT = [
-  {
-    isExpanded: false,
-    category_name: "School of Accountancy",
-    subcategory: [
-      { id: 1, val: "Group Study Room (GSR) 3-5" },
-      { id: 3, val: "Group Study Room (GSR) 3-2" },
-    ],
-  },
-  {
-    isExpanded: false,
-    category_name:
-      "School of Economics/School of Computing and Information Systems 2",
-    subcategory: [
-      { id: 4, val: "Group Study Room (GSR) 3-4" },
-      { id: 5, val: "Group Study Room (GSR) 3-6" },
-    ],
-  },
-  {
-    isExpanded: false,
-    category_name: "School of Computing and Information Systems 1",
-    subcategory: [
-      { id: 7, val: "Group Study Room (GSR) 3-1" },
-      { id: 9, val: "Group Study Room (GSR) 3-2" },
-    ],
-  },
+  // {
+  //   isExpanded: false,
+  //   category_name: "School of Accountancy",
+  //   subcategory: [
+  //     { id: 1, val: "Group Study Room (GSR) 3-5" },
+  //     { id: 3, val: "Group Study Room (GSR) 3-2" },
+  //   ],
+  // },
+  // {
+  //   isExpanded: false,
+  //   category_name:
+  //     "School of Economics/School of Computing and Information Systems 2",
+  //   subcategory: [
+  //     { id: 4, val: "Group Study Room (GSR) 3-4" },
+  //     { id: 5, val: "Group Study Room (GSR) 3-6" },
+  //   ],
+  // },
+  // {
+  //   isExpanded: false,
+  //   category_name: "School of Computing and Information Systems 1",
+  //   subcategory: [
+  //     { id: 7, val: "Group Study Room (GSR) 3-1" },
+  //     { id: 9, val: "Group Study Room (GSR) 3-2" },
+  //   ],
+  // },
 ];

@@ -76,8 +76,10 @@ const TimePicker = () => {
                   seat 14 at LKS Level 2{" "}
                 </Text>{" "}
                 at the timing{" "}
-                <Text style={{ fontWeight: "bold" }}>1600hrs - 1800hrs</Text> has been
-                confirmed
+                <Text style={{ fontWeight: "bold" }}>
+                  1600hrs - 1800hrs
+                </Text>{" "}
+                has been confirmed
               </Text>
             </View>
           </View>
@@ -159,18 +161,18 @@ const timeSlots = [
   { id: 7, time: "11:00 - 11:30", booked: false },
   { id: 8, time: "11:30 - 12:00", booked: false },
   { id: 9, time: "12:00 - 12:30", booked: true },
-  { id: 10, time: "12:30 - 13:00", booked: true },
-  { id: 11, time: "13:00 - 13:30", booked: true },
-  { id: 12, time: "13:30 - 14:00", booked: false },
-  { id: 13, time: "14:30 - 15:00", booked: false },
-  { id: 14, time: "15:30 - 16:00", booked: false },
-  { id: 15, time: "16:00 - 16:30", booked: false },
-  { id: 16, time: "16:30 - 17:00", booked: false },
-  { id: 17, time: "17:00 - 17:30", booked: false },
-  { id: 18, time: "17:30 - 18:00", booked: true },
-  { id: 19, time: "18:00 - 18:30", booked: true },
-  { id: 20, time: "18:30 - 19:00", booked: true },
-  { id: 21, time: "19:00 - 19:30", booked: true },
+  //   { id: 10, time: "12:30 - 13:00", booked: true },
+  //   { id: 11, time: "13:00 - 13:30", booked: true },
+  //   { id: 12, time: "13:30 - 14:00", booked: false },
+  //   { id: 13, time: "14:30 - 15:00", booked: false },
+  //   { id: 14, time: "15:30 - 16:00", booked: false },
+  //   { id: 15, time: "16:00 - 16:30", booked: false },
+  //   { id: 16, time: "16:30 - 17:00", booked: false },
+  //   { id: 17, time: "17:00 - 17:30", booked: false },
+  //   { id: 18, time: "17:30 - 18:00", booked: true },
+  //   { id: 19, time: "18:00 - 18:30", booked: true },
+  //   { id: 20, time: "18:30 - 19:00", booked: true },
+  //   { id: 21, time: "19:00 - 19:30", booked: true },
 ];
 
 export default TimePicker;
