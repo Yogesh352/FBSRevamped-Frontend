@@ -11,7 +11,7 @@ const BookingPage = ({ navigation }) => {
         justifyContent: "space-evenly",
       }}
     >
-      <Text style={styles.headerTitle}>LKS Level 2 Seat 14</Text>
+      <Text style={styles.headerTitle}>LKS Level 3 Seat 14</Text>
       <Image
         style={styles.locationImage}
         source={require("../images/LKSImage.jpg")}
