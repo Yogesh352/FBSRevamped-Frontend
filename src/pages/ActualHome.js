@@ -14,7 +14,7 @@ import InstantBooking from "../components/Homepage/InstantBooking";
 const data = [
     {
       id: 1,
-      title: "School of Computing",
+      title: "School of Economics",
       body: "Seminar Room 3-1",
       imgUrl: "https://picsum.photos/id/11/200/300",
     },

@@ -25,8 +25,8 @@ const styles = StyleSheet.create({
       borderRadius: 12
     },
     findMeASeatText: {
-      marginTop: -44,
-      marginLeft: "56%",
+      marginTop: -28,
+      marginLeft: "60%",
       fontSize: 20,
       fontWeight: "bold",
       color: "white",
