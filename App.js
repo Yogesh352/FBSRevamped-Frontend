@@ -15,6 +15,7 @@ import { StackRouter } from "react-navigation";
 const Tab = createBottomTabNavigator();
 
 const App = () => {
+  console.disableYellowBox = true;
   return (
     <>
       <NavigationContainer>

@@ -45,6 +45,7 @@ const TimeSelection = () => {
               mode="time"
               onConfirm={handleStartConfirm}
               onCancel={hideStartTimePicker}
+              timeZoneOffsetInMinutes={0}
             />
           </View>
           <View style={{ flex: 1 }}>
@@ -60,6 +61,7 @@ const TimeSelection = () => {
               mode="time"
               onConfirm={handleEndConfirm}
               onCancel={hideEndTimePicker}
+              timeZoneOffsetInMinutes={0}
             />
           </View>
         </View>

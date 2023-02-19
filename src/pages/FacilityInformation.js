@@ -150,6 +150,7 @@ const FacilityInformation = ({ navigation }) => {
                                 mode="time"
                                 onConfirm={handleOutConfirm}
                                 onCancel={() => setOutVisible(false)}
+                                timeZoneOffsetInMinutes={0}
                             />
                         </TouchableOpacity>
                     </View>
@@ -168,6 +169,7 @@ const FacilityInformation = ({ navigation }) => {
                                 mode="time"
                                 onConfirm={handleRetConfirm}
                                 onCancel={() => setRetVisible(false)}
+                                timeZoneOffsetInMinutes={0}
                             />
                         </TouchableOpacity>
                     </View>
