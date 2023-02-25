@@ -63,6 +63,7 @@ const TimeSelection = (props) => {
             <DateTimePickerModal
               isVisible={isEndTimeVisible}
               mode="time"
+              date={props.defaultTimePicker}
               onConfirm={handleEndConfirm}
               onCancel={hideEndTimePicker}
               timeZoneOffsetInMinutes={0}

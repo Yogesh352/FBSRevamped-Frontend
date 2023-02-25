@@ -8,8 +8,8 @@ import TimeSelection from "../components/Filter/TimeSelection";
 
 const FilterPage = ({ navigation }) => {
   const reset = () => {
-    setStartTimeChange(defaultTime);
-    setEndTimeChange(defaultTime);
+    setStartTimeChange(defaultTimeString);
+    setEndTimeChange(defaultTimeString);
   };
 
   const formatTimeByOffset = (dateString, offset) => {
@@ -31,25 +31,25 @@ const FilterPage = ({ navigation }) => {
       .replace('T', ' ')
       .slice(0, 16)
     
-    return `${newDateString}`
+    return `${newDateString}$${dateObject}`
   }
 
   let nowString = JSON.stringify(new Date());
   let nowArray = nowString.split("T");
   let now = nowArray[0].substring(1, 11) + " " + nowArray[1].substring(0, 8);
-  let defaultTime = formatTimeByOffset(now, 8).toLocaleString();
-  let defaultTimePicker = Date.parse(formatTimeByOffset(now, 8).toLocaleString());
-  console.log(defaultTimePicker);
-  console.log(defaultTime);
-  const [startTimeSelected, setStartTimeChange] = React.useState(defaultTime);
-  const [endTimeSelected, setEndTimeChange] = React.useState(defaultTime);
+  let defaultTime = formatTimeByOffset(now, 8).split('$');
+  let defaultTimeString = defaultTime[0].toLocaleString();
+  let defaultTimePicker = new Date(defaultTime[1]);
+
+  const [startTimeSelected, setStartTimeChange] = React.useState(defaultTimeString);
+  const [endTimeSelected, setEndTimeChange] = React.useState(defaultTimeString);
 
   return (
     <View style={styles.content}>
       <View style={styles.container}>
         <Calendar />
         <TimeSelection 
-          defaultTime={defaultTime} 
+          defaultTime={defaultTimeString} 
           startTimeSelected={startTimeSelected} 
           setStartTimeChange={setStartTimeChange}
           endTimeSelected={endTimeSelected}
