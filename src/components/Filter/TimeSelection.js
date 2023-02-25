@@ -2,7 +2,7 @@ import { Text, View, StyleSheet, TouchableOpacity } from "react-native";
 import React, { useState } from "react";
 import DateTimePickerModal from "react-native-modal-datetime-picker";
 
-const TimeSelection = () => {
+const TimeSelection = (props) => {
   const [isStartTimeVisible, setStartTimeVisibility] = useState(false);
   const showStartTimePicker = () => {
     setStartTimeVisibility(true);
@@ -17,15 +17,15 @@ const TimeSelection = () => {
   const hideEndTimePicker = () => {
     setEndTimeVisibility(false);
   };
-  const [startTimeSelected, setStartTimeChange] = React.useState("");
+
   const handleStartConfirm = (startTime) => {
-    setStartTimeChange(startTime);
+    props.setStartTimeChange(startTime);
     console.log("A start time has been picked: ", startTime);
     hideStartTimePicker();
   };
-  const [endTimeSelected, setEndTimeChange] = React.useState("");
+
   const handleEndConfirm = (endTime) => {
-    setEndTimeChange(endTime);
+    props.setEndTimeChange(endTime);
     console.log("A end time has been picked: ", endTime);
     hideEndTimePicker();
   };
@@ -43,9 +43,11 @@ const TimeSelection = () => {
             <DateTimePickerModal
               isVisible={isStartTimeVisible}
               mode="time"
+              date={props.defaultTimePicker}
               onConfirm={handleStartConfirm}
               onCancel={hideStartTimePicker}
               timeZoneOffsetInMinutes={0}
+              minuteInterval={15}
             />
           </View>
           <View style={{ flex: 1 }}>
@@ -59,9 +61,11 @@ const TimeSelection = () => {
             <DateTimePickerModal
               isVisible={isEndTimeVisible}
               mode="time"
+              date={props.defaultTimePicker}
               onConfirm={handleEndConfirm}
               onCancel={hideEndTimePicker}
               timeZoneOffsetInMinutes={0}
+              minuteInterval={15}
             />
           </View>
         </View>
@@ -69,12 +73,12 @@ const TimeSelection = () => {
         <View style={{ flexDirection: "row" }}>
           <View style={{ flex: 1 }}>
             <Text style={styles.selectedTime}>
-              {JSON.stringify(startTimeSelected).substring(12, 17)}
+              {JSON.stringify(props.startTimeSelected).substring(12, 17)}
             </Text>
           </View>
           <View style={{ flex: 1 }}>
             <Text style={styles.selectedTime}>
-              {JSON.stringify(endTimeSelected).substring(12, 17)}
+              {JSON.stringify(props.endTimeSelected).substring(12, 17)}
             </Text>
           </View>
         </View>
@@ -86,11 +90,11 @@ const styles = StyleSheet.create({
   timeText: {
     textAlign: "center",
     fontWeight: "500",
-    color: "white"
+    color: "black"
   },
   timeButton: {
     width: "80%",
-    backgroundColor: "#293637",
+    backgroundColor: "#94c0db",
     padding: 10,
     marginHorizontal: 20,
     marginVertical: 20,
