@@ -3,18 +3,18 @@ import React, { useState } from "react";
 import CalendarStrip from "react-native-calendar-strip";
 import moment from "moment";
 
-const Calendar = () => {
+const Calendar = (props) => {
   let datesWhitelist = [
     {
       start: moment(),
       end: moment().add(14, "days"), // total 14 days included
     },
   ];
-  var [dateSelected, setDateChange] = React.useState(moment());
-  var selectedDate = [{date: dateSelected, lines: [{color: '#94c0db'}]}]
+  // var [dateSelected, setDateChange] = React.useState(moment());
+  var selectedDate = [{date: props.dateSelected, lines: [{color: '#94c0db'}]}]
   var handleDateChange = (date) => {
-    setDateChange(date);
-    console.log(dateSelected);
+    props.setDateChange(date);
+    console.log(props.dateSelected);
   };
 
   return (
@@ -34,6 +34,7 @@ const Calendar = () => {
         datesWhitelist={datesWhitelist}
         onDateSelected={handleDateChange}
         markedDates={selectedDate}
+        scrollToOnSetSelectedDate={true}
     />
   );
 };

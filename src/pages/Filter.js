@@ -1,5 +1,6 @@
 import { Button, Text, View, StyleSheet, TouchableOpacity } from "react-native";
 import React, { useState } from "react";
+import moment from "moment";
 
 import Calendar from "../components/Filter/Calendar";
 import FacilityTypeDropdown from "../components/Filter/FacilityTypeDropdown";
@@ -10,6 +11,7 @@ const FilterPage = ({ navigation }) => {
   const reset = () => {
     setStartTimeChange(defaultTimeString);
     setEndTimeChange(defaultTimeString);
+    setDateChange(moment());
   };
 
   const formatTimeByOffset = (dateString, offset) => {
@@ -44,10 +46,15 @@ const FilterPage = ({ navigation }) => {
   const [startTimeSelected, setStartTimeChange] = React.useState(defaultTimeString);
   const [endTimeSelected, setEndTimeChange] = React.useState(defaultTimeString);
 
+  var [dateSelected, setDateChange] = React.useState(moment());
+
   return (
     <View style={styles.content}>
       <View style={styles.container}>
-        <Calendar />
+        <Calendar 
+          dateSelected={dateSelected}
+          setDateChange={setDateChange}
+        />
         <TimeSelection 
           defaultTime={defaultTimeString} 
           startTimeSelected={startTimeSelected} 
