@@ -10,7 +10,7 @@ const Calendar = (props) => {
       end: moment().add(14, "days"), // total 14 days included
     },
   ];
-  // var [dateSelected, setDateChange] = React.useState(moment());
+
   var selectedDate = [{date: props.dateSelected, lines: [{color: '#94c0db'}]}]
   var handleDateChange = (date) => {
     props.setDateChange(date);

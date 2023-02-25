@@ -18,14 +18,12 @@ const TimeSelection = (props) => {
     setEndTimeVisibility(false);
   };
 
-  // const [startTimeSelected, setStartTimeChange] = React.useState(props.defaultTime);
   const handleStartConfirm = (startTime) => {
     props.setStartTimeChange(startTime);
     console.log("A start time has been picked: ", startTime);
     hideStartTimePicker();
   };
 
-  // const [endTimeSelected, setEndTimeChange] = React.useState(props.defaultTime);
   const handleEndConfirm = (endTime) => {
     props.setEndTimeChange(endTime);
     console.log("A end time has been picked: ", endTime);
