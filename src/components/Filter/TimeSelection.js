@@ -95,9 +95,10 @@ const styles = StyleSheet.create({
   timeButton: {
     width: "80%",
     backgroundColor: "#94c0db",
-    padding: 10,
+    padding: 8,
     marginHorizontal: 20,
-    marginVertical: 20,
+    marginBottom: 12,
+    marginTop: 20,
     borderRadius: 5,
   },
   selectedTime: {
@@ -105,7 +106,7 @@ const styles = StyleSheet.create({
     textAlign: "center",
     fontWeight: "500",
     color: "white",
-    paddingBottom: 30
+    paddingBottom: 24
   }
 });
 

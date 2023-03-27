@@ -55,10 +55,8 @@ function FacilityTypeDropdown(props) {
                     backgroundColor: '#1a2222',
                     alignItems: 'center',
                     justifyContent: 'center',
-                    paddingHorizontal: 1,
-                    paddingLeft: 2,
-                    maxWidth: '97%',
-                    marginBottom: 20,
+                    maxWidth: '100%',
+                    marginBottom: 5,
                     zIndex: 2
                     }}>
                     <View style={{
@@ -69,7 +67,7 @@ function FacilityTypeDropdown(props) {
                             <View style={{flex: 3}}>
                                 <Text style={styles.plainText}>Facility Type</Text>
                             </View>
-                            <View style={{flex: 1}}>
+                            <View style={{flex: 1, paddingRight: 2}}>
                                 <TouchableOpacity 
                                     onPress={reset} 
                                     activeOpacity={0}>

@@ -54,8 +54,7 @@ function LocationDropdown(props) {
                     backgroundColor: '#1a2222',
                     alignItems: 'center',
                     justifyContent: 'center',
-                    paddingLeft: 2,
-                    maxWidth: '97%',
+                    maxWidth: '100%',
                     zIndex: 2
                     }}>
                     <View style={{

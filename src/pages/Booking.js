@@ -6,7 +6,7 @@ const BookingPage = ({ navigation }) => {
     <View
       style={{
         backgroundColor: "#1a2222",
-        padding: 10,
+        padding: 16,
         flex: 1,
         justifyContent: "space-evenly",
       }}

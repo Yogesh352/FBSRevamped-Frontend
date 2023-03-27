@@ -11,7 +11,6 @@ const MapPage = ({ navigation }) => {
       <View
         style={{
           width: "50%",
-
           height: "10%",
           alignSelf: "center",
         }}
@@ -25,10 +24,10 @@ const MapPage = ({ navigation }) => {
           prevButton={<Text style={{ color: "#e9e8ea", fontSize: 45 }}>‹</Text>}
         >
           <View style={styles.slide1}>
-            <Text style={styles.text}>Level 3</Text>
+            <Text style={styles.text}>Level 2</Text>
           </View>
           <View style={styles.slide1}>
-            <Text style={styles.text}>Level 2</Text>
+            <Text style={styles.text}>Level 3</Text>
           </View>
         </Swiper>
       </View>

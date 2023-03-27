@@ -94,28 +94,7 @@ const SeatsListing = () => {
         }}
       >
         <View style={styles.container}>
-          <View
-            style={{
-              flexDirection: "row-reverse",
-
-              padding: 4,
-              backgroundColor: "#1a2222",
-            }}
-          >
-            <TouchableOpacity onPress={() => setMultiSelect(!multiSelect)}>
-              <Text
-                style={{
-                  textAlign: "center",
-                  justifyContent: "center",
-                  color: "white",
-                  paddingTop: 10,
-                }}
-              >
-                {multiSelect ? "Single Expand" : "Multiple Expand"}
-              </Text>
-            </TouchableOpacity>
-          </View>
-          <ScrollView>
+          <ScrollView style={styles.dropdown}>
             {listDataSource.map((item, key) => (
               <ExpandableComponent
                 key={item.category_name}
@@ -126,6 +105,26 @@ const SeatsListing = () => {
               />
             ))}
           </ScrollView>
+
+          <View
+            style={{
+              flexDirection: "row-reverse",
+              backgroundColor: "#1a2222",
+            }}
+          >
+            <TouchableOpacity onPress={() => setMultiSelect(!multiSelect)}>
+              <Text
+                style={{
+                  textAlign: "center",
+                  justifyContent: "center",
+                  color: "white",
+                }}
+              >
+                {multiSelect ? "Single Expand" : "Multiple Expand"}
+              </Text>
+            </TouchableOpacity>
+          </View>
+
         </View>
       </ScrollView>
     </>
@@ -137,6 +136,7 @@ export default SeatsListing;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    paddingHorizontal: 16,
   },
   header: {
     backgroundColor: "#293637",
@@ -162,6 +162,10 @@ const styles = StyleSheet.create({
   //     backgroundColor: '#000000',
   //     width: '100%',
   //   },
+  dropdown: {
+    marginVertical: 10,
+    marginRight: -4
+  },
   text: {
     fontSize: 16,
     color: "white",

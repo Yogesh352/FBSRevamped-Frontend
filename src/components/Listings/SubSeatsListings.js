@@ -142,6 +142,10 @@ const SubSeatListing = () => {
   const [listDataSource, setListDataSource] = useState(CONTENT);
   const [multiSelect, setMultiSelect] = useState(false);
 
+  const navigation = useNavigation();
+
+  const [showPopup, setShowPopup] = useState(false);
+
   if (Platform.OS === "android") {
     UIManager.setLayoutAnimationEnabledExperimental(true);
   }
@@ -175,14 +179,54 @@ const SubSeatListing = () => {
       <View style={styles.container}>
         <ScrollView>
           {listDataSource.map((item, key) => (
-            <ExpandableComponent
-              key={item.category_name}
-              onClickFunction={() => {
-                updateLayout(key);
-              }}
-              item={item}
-            />
+              <TouchableOpacity
+                onPress={() => {
+                  if (item.category_name==="Level 2") {
+                    navigation.navigate("Map")
+                  } else {
+                    setShowPopup(true);
+                  }
+                }}
+              >
+                <ExpandableComponent
+                  key={item.category_name}
+                  onClickFunction={() => {
+                    updateLayout(key);
+                  }}
+                  item={item}
+                />
+                { (item.category_name==="Level 2") &&
+                  <Ionic
+                    name="lock-open"
+                    size={32}
+                    color="#7f9988"
+                    style={styles.unlock}
+                  />
+                }
+                { (item.category_name!=="Level 2") &&
+                  <Ionic
+                    name="lock-closed"
+                    size={32}
+                    color="#997f7f"
+                    style={styles.lock}
+                  />
+                }
+            </TouchableOpacity>
           ))}
+
+          {showPopup &&
+            <TouchableOpacity 
+              onPress={() => (
+                setShowPopup(false)
+              )}
+              style={styles.lockedPopup}
+            >
+              <Text>
+                Sorry, this section is currently locked. Check back in later!
+              </Text>
+            </TouchableOpacity>
+          }
+
         </ScrollView>
       </View>
     </View>
@@ -266,6 +310,25 @@ const styles = StyleSheet.create({
     color: "#e9e8ea",
     fontSize: 20,
   },
+  lock: {
+    position: 'absolute',
+    paddingLeft: '90%',
+    paddingTop: 6
+  },
+  unlock: {
+    position: 'absolute',
+    paddingLeft: '90%',
+    paddingTop: 6,
+    zIndex: 1000
+  },
+  lockedPopup: {
+    // position: "absolute",
+    alignSelf: "center",
+    padding: 16,
+    backgroundColor: '#94c0db',
+    marginTop: 16,
+    width: "90%"
+  }
 });
 
 //Dummy content to show
@@ -280,6 +343,7 @@ const CONTENT = [
       //   { id: "Seat3", val: "Seat 3" },
       //   { id: "Seat4", val: "Seat 4" },
     ],
+    isLocked: false
   },
   {
     isExpanded: false,
@@ -289,6 +353,7 @@ const CONTENT = [
       //   { id: "Seat2", val: "Seat 5" },
       //   { id: "Seat3", val: "Seat 6" },
     ],
+    isLocked: true
   },
   {
     isExpanded: false,
@@ -298,5 +363,6 @@ const CONTENT = [
       //   { id: "Seat2", val: "Seat 5" },
       //   { id: "Seat3", val: "Seat 6" },
     ],
+    isLocked: true
   },
 ];
